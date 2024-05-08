@@ -151,7 +151,7 @@
    intel-gpu-tools
    celluloid
    yt-dlp
-   # obsidian # currently not possible because of outdated version of electron
+   # obsidian # Electron EOL. Flatpak installed as a workaround
    discord
    fastfetch
    htop
@@ -270,6 +270,9 @@
   # Enabling firmware updates
   services.fwupd.enable = true;  
 
+  # Flatpak support. Obsidian installed with flatpak
+  services.flatpak.enable = true;
+  
   # Disable power profiles daemon to make sure auto-cpufreq starts at boot
   services.power-profiles-daemon.enable = false;
 
