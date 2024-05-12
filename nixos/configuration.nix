@@ -183,6 +183,9 @@
    distrobox
    ventoy-full
    tealdeer
+   gnome.gnome-boxes
+   quickemu
+   quickgui
 
    # vscodium extensions
    (vscode-with-extensions.override {
