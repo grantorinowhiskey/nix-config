@@ -117,7 +117,7 @@
   users.users.jt = {
     isNormalUser = true;
     description = "Jens";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
     packages = with pkgs; [
       firefox
     #  thunderbird
@@ -183,9 +183,6 @@
    distrobox
    ventoy-full
    tealdeer
-   gnome.gnome-boxes
-   quickemu
-   quickgui
 
    # vscodium extensions
    (vscode-with-extensions.override {
