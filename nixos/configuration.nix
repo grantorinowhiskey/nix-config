@@ -183,6 +183,7 @@
    distrobox
    ventoy-full
    tealdeer
+   hugo
 
    # vscodium extensions
    (vscode-with-extensions.override {
