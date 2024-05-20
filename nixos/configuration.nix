@@ -184,6 +184,8 @@
    ventoy-full
    tealdeer
    hugo
+   brave
+  
 
    # vscodium extensions
    (vscode-with-extensions.override {
