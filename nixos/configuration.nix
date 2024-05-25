@@ -135,6 +135,9 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Flake support and nix commandand-line tool
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -185,7 +188,6 @@
    tealdeer
    hugo
    brave
-  
 
    # vscodium extensions
    (vscode-with-extensions.override {
@@ -220,7 +222,6 @@
   ]);
 
   # Gnome triple buffering
-  #
   nixpkgs.overlays = [
     (final: prev: {
       gnome = prev.gnome.overrideScope (gnomeFinal: gnomePrev: {
@@ -247,11 +248,11 @@
   # List services that you want to enable:
 
   # Automatic upgrades
-  system.autoUpgrade = {
-  enable = true;
-  allowReboot = false;
-  operation = "boot";
-  };
+  # system.autoUpgrade = {
+  # enable = true;
+  # allowReboot = false;
+  # operation = "boot";
+  # };
   
   # Automatic garbage collection, per recommendations from the wiki
   nix.gc = {
