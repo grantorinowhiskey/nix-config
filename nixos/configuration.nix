@@ -200,6 +200,7 @@
    gnomeExtensions.alphabetical-app-grid
    gnomeExtensions.blur-my-shell
    gnomeExtensions.caffeine
+   gnomeExtensions.mullvad-indicator
   ];
 
   # Exclusion of certain gnome applications
