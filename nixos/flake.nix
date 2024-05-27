@@ -14,6 +14,11 @@
         # Import the previous configuration.nix we used,
         # so the old configuration file still takes effect
         ./configuration.nix
+        {
+          # Set all inputs parameters as special arguments for all subomdules,
+          # so you can directly use all dependencies in inputs in submodules
+          _module.args = {inherit inputs; };
+        }
       ];
     };
   };
