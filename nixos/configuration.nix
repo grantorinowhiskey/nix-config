@@ -141,53 +141,52 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-   wget
-   curl
-   git
-   micro
-   fish
-   starship
-   blackbox-terminal
-   yubioath-flutter
-   nerdfonts
-   intel-gpu-tools
-   celluloid
-   yt-dlp
-   # obsidian # Electron EOL. Flatpak installed as a workaround
-   discord
-   fastfetch
-   htop
-   bottom
-   lm_sensors
-   papirus-icon-theme
-   gnome.gnome-tweaks
-   mission-center
-   mullvad-vpn # needs systemd-resolved
-   mullvad-closest
-   vscodium # see below for extensions
    adw-gtk3
-   element-desktop
-   fragments
-   libreoffice-fresh
-   hunspellDicts.sv-se # hunspell dictionary for libreoffice
-   zellij
-   virt-manager       
-   localsend
-   fzf
    bat
-   bat-extras.prettybat
-   bat-extras.batwatch
-   bat-extras.batpipe
-   bat-extras.batman
-   bat-extras.batgrep
    bat-extras.batdiff
-   spotify
-   distrobox
-   ventoy-full
-   tealdeer
-   hugo
+   bat-extras.batgrep
+   bat-extras.batman
+   bat-extras.batpipe
+   bat-extras.batwatch
+   bat-extras.prettybat
+   blackbox-terminal
+   bottom
    brave
+   celluloid
+   curl
+   discord
+   distrobox
+   element-desktop
+   fastfetch
+   fish
+   fragments
+   fzf
+   git
+   gnome.gnome-tweaks
+   htop
+   hugo
+   hunspellDicts.sv-se # hunspell dictionary for libreoffice
+   intel-gpu-tools
+   libreoffice-fresh
+   lm_sensors
+   localsend
+   micro
+   mission-center
+   mullvad-closest
+   mullvad-vpn # needs systemd-resolved
+   nerdfonts
+   # obsidian # Electron EOL. Flatpak installed as a workaround
+   papirus-icon-theme
+   spotify
+   starship
+   tealdeer
+   ventoy-full
+   virt-manager       
+   vscodium # see below for extensions
+   wget
+   yt-dlp
+   yubioath-flutter
+   zellij
 
    # vscodium extensions
    (vscode-with-extensions.override {
@@ -198,10 +197,10 @@
      })
 
    # gnome extensions
-   gnomeExtensions.middle-click-to-close-in-overview
    gnomeExtensions.alphabetical-app-grid
    gnomeExtensions.blur-my-shell
    gnomeExtensions.caffeine
+   gnomeExtensions.middle-click-to-close-in-overview
    gnomeExtensions.mullvad-indicator
   ];
 
