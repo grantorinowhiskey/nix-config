@@ -175,7 +175,7 @@
    mullvad-closest
    mullvad-vpn # needs systemd-resolved
    nerdfonts
-   # obsidian # Electron EOL. Flatpak installed as a workaround
+   obsidian
    papirus-icon-theme
    spotify
    starship
@@ -220,21 +220,20 @@
     gnome-system-monitor
   ]);
 
-  # Gnome triple buffering
-  # nixpkgs.overlays = [
-  #   (final: prev: {
-  #     gnome = prev.gnome.overrideScope (gnomeFinal: gnomePrev: {
-  #       mutter = gnomePrev.mutter.overrideAttrs ( old: {
-  #         src = pkgs.fetchgit {
-  #           url = "https://gitlab.gnome.org/vanvugt/mutter.git";
-  #           # GNOME 45: triple-buffering-v4-45
-  #           rev = "0b896518b2028d9c4d6ea44806d093fd33793689";
-  #           sha256 = "sha256-mzNy5GPlB2qkI2KEAErJQzO//uo8yO0kPQUwvGDwR4w=";
-  #         };
-  #       } );
-  #     });
-  #   })
-  # ];
+  nixpkgs.overlays = [
+    # GNOME 46: triple-buffering-v4-46
+    (final: prev: {
+      gnome = prev.gnome.overrideScope (gnomeFinal: gnomePrev: {
+        mutter = gnomePrev.mutter.overrideAttrs ( old: {
+          src = pkgs.fetchgit {
+            url = "https://gitlab.gnome.org/vanvugt/mutter.git";
+			rev = "663f19bc02c1b4e3d1a67b4ad72d644f9b9d6970";
+            sha256 = "sha256-I1s4yz5JEWJY65g+dgprchwZuPGP9djgYXrMMxDQGrs=";         
+          };
+        } );
+      });
+    })
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
