@@ -176,6 +176,7 @@
    mullvad-vpn # needs systemd-resolved
    nerdfonts
    obsidian
+   onlyoffice-bin_latest
    papirus-icon-theme
    spotify
    starship
