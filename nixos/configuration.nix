@@ -165,9 +165,9 @@
    gnome.gnome-tweaks
    htop
    hugo
-   hunspellDicts.sv-se # hunspell dictionary for libreoffice
+   # hunspellDicts.sv-se # hunspell dictionary for libreoffice
    intel-gpu-tools
-   libreoffice-fresh
+   # libreoffice-fresh # removed and installed with flatpak
    lm_sensors
    localsend
    micro
