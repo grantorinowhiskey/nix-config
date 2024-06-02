@@ -154,6 +154,7 @@
    bat-extras.prettybat
    blackbox-terminal
    bottom
+   boxbuddy
    brave
    celluloid
    curl
