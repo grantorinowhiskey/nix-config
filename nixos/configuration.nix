@@ -180,6 +180,7 @@
    obsidian
    onlyoffice-bin_latest
    papirus-icon-theme
+   ptyxis
    spotify
    starship
    tealdeer
