@@ -169,9 +169,7 @@
    gnome.gnome-tweaks
    htop
    hugo
-   # hunspellDicts.sv-se # hunspell dictionary for libreoffice
    intel-gpu-tools
-   # libreoffice-fresh # removed and installed with flatpak
    lm_sensors
    localsend
    micro
@@ -278,7 +276,7 @@
   # Enabling firmware updates
   services.fwupd.enable = true;  
 
-  # Flatpak support. Obsidian installed with flatpak
+  # Flatpak support
   services.flatpak.enable = true;
   
   # Disable power profiles daemon to make sure auto-cpufreq starts at boot
@@ -297,7 +295,7 @@
   services.resolved.enable = true;
 
   # Mullvad # Disabled since package not working under 24.05. Using wg cert in network manager
-  services.mullvad-vpn.enable = false;
+  services.mullvad-vpn.enable = true;
 
   # Syncthing, https://nixos.wiki/wiki/Syncthing
   services = {
