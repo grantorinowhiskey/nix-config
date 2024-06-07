@@ -177,6 +177,7 @@
    mullvad-closest
    # mullvad-vpn # needs systemd-resolved # Not working properly under 24.05. Using via network manager
    nerdfonts
+   nh
    obsidian
    onlyoffice-bin_latest
    papirus-icon-theme
