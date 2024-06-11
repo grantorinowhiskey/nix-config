@@ -205,6 +205,7 @@
    gnomeExtensions.caffeine
    gnomeExtensions.middle-click-to-close-in-overview
    gnomeExtensions.mullvad-indicator
+   gnomeExtensions.pip-on-top
   ];
 
   # Exclusion of certain gnome applications
