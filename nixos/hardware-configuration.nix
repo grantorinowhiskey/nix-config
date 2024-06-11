@@ -18,21 +18,19 @@
   boot.kernelParams = [ "psmouse.synaptics_intertouch=0" ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/dc3d1f1e-58d5-4688-9c11-736ac7913f14";
+    { device = "/dev/disk/by-uuid/d41a6f69-c3a8-4807-9614-b0d7b2b27bf1";
       fsType = "ext4";
     };
 
-  boot.initrd.luks.devices."luks-1829bbca-f306-4f89-ba12-880eafd085f3".device = "/dev/disk/by-uuid/1829bbca-f306-4f89-ba12-880eafd085f3";
+  boot.initrd.luks.devices."luks-79ff0415-96f9-4cef-877f-6c9572cbcc29".device = "/dev/disk/by-uuid/79ff0415-96f9-4cef-877f-6c9572cbcc29";
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/ECB6-2656";
+    { device = "/dev/disk/by-uuid/2106-543D";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
-  swapDevices =
-    [ { device = "/dev/disk/by-uuid/62f26c71-59d3-4654-9bf8-161aa0d985a5"; }
-    ];
+  swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
