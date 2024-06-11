@@ -14,13 +14,11 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.initrd.luks.devices."luks-c46c9934-00bf-4001-a5bd-064a22e1c674".device = "/dev/disk/by-uuid/c46c9934-00bf-4001-a5bd-064a22e1c674";
-  networking.hostName = "nix-t14"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  # zram
+  zramSwap.enable = true;
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  # hostname
+  networking.hostName = "nix-t14";
 
   # Kernel, using latest
   boot.kernelPackages = pkgs.linuxPackages_latest;
