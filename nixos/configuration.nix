@@ -177,7 +177,7 @@
    nerdfonts
    nh
    nixos-generators
-   obsidian
+   # obsidian # builds failing, resorting to flatpak instead
    onlyoffice-bin_latest
    papirus-icon-theme
    ptyxis
