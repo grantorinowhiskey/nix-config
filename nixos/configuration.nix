@@ -150,7 +150,6 @@
    bat-extras.batpipe
    bat-extras.batwatch
    bat-extras.prettybat
-   blackbox-terminal
    bottom
    boxbuddy
    brave
