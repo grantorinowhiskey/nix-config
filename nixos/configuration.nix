@@ -156,6 +156,7 @@
    celluloid
    curl
    discord
+   disko
    distrobox
    element-desktop
    fastfetch
@@ -189,6 +190,7 @@
    wget
    yt-dlp
    yubioath-flutter
+   zed
    zellij
 
    # vscodium extensions
