@@ -190,7 +190,7 @@
    wget
    yt-dlp
    yubioath-flutter
-   zed
+   zed-editor
    zellij
 
    # vscodium extensions
