@@ -150,6 +150,7 @@
    bat-extras.batpipe
    bat-extras.batwatch
    bat-extras.prettybat
+   bitwarden-cli
    bottom
    boxbuddy
    brave
