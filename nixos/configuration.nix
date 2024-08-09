@@ -169,6 +169,7 @@
    htop
    hugo
    intel-gpu-tools
+   inter # proposed font for gnome
    lm_sensors
    localsend
    micro
