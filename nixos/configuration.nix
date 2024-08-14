@@ -125,26 +125,13 @@
     ];
   };
 
-  # Linneas användare
-    users.users.linnea = {
-    isNormalUser = true;
-    description = "Linnea";
-    extraGroups = [ "networkmanager" ];
-    packages = with pkgs; [
-      firefox
-      google-chrome     
-    #  thunderbird
-    ];
-  };
-
-
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "jt";
 
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
-  # systemd.services."getty@tty1".enable = false;
-  # systemd.services."autovt@tty1".enable = false;
+  systemd.services."getty@tty1".enable = false;
+  systemd.services."autovt@tty1".enable = false;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
