@@ -7,17 +7,17 @@
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
-    # Please replace my-nixos with your hostname
     nixosConfigurations.nix-t14 = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        # Import the previous configuration.nix we used,
-        # so the old configuration file still takes effect
+        # Import the previous configuration.nix
         ./configuration.nix
+
+        # Import the new GNOME module
+        ./gnome.nix
+
         {
-          # Set all inputs parameters as special arguments for all subomdules,
-          # so you can directly use all dependencies in inputs in submodules
-          _module.args = {inherit inputs; };
+          _module.args = { inherit inputs; };
         }
       ];
     };
