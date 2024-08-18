@@ -165,6 +165,7 @@
    ptyxis
    spotify
    starship
+   steam-run
    tealdeer
    ventoy-full
    virt-manager       
