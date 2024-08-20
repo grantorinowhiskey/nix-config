@@ -146,6 +146,8 @@
    fzf
    git
    gnome.gnome-tweaks
+   gnupg
+   gocryptfs
    htop
    hugo
    intel-gpu-tools
