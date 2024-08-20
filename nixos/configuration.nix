@@ -146,7 +146,7 @@
    fzf
    git
    gnome.gnome-tweaks
-   gnupg
+   gnupg1
    gocryptfs
    htop
    hugo
