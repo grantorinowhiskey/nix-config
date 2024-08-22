@@ -123,6 +123,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+   aria2 # CLI-download manager
    bat
    bat-extras.batdiff
    bat-extras.batgrep
@@ -168,6 +169,7 @@
    spotify
    starship
    steam-run
+   svtplay-dl
    tealdeer
    ventoy-full
    virt-manager       
