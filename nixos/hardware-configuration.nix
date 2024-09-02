@@ -12,22 +12,18 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
-  
-  # Avoid touchpad click to tap (clickpad) bug. For more detail see:
-  # https://wiki.archlinux.org/title/Touchpad_Synaptics#Touchpad_does_not_work_after_resuming_from_hibernate/suspend
-  boot.kernelParams = [ "psmouse.synaptics_intertouch=0" ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/d41a6f69-c3a8-4807-9614-b0d7b2b27bf1";
+    { device = "/dev/disk/by-uuid/5de79936-0e09-40a2-98b6-d12bda400fa5";
       fsType = "ext4";
     };
 
-  boot.initrd.luks.devices."luks-79ff0415-96f9-4cef-877f-6c9572cbcc29".device = "/dev/disk/by-uuid/79ff0415-96f9-4cef-877f-6c9572cbcc29";
+  boot.initrd.luks.devices."luks-c9b7d0c0-0a19-4963-89db-b2a82f22ead3".device = "/dev/disk/by-uuid/c9b7d0c0-0a19-4963-89db-b2a82f22ead3";
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/2106-543D";
+    { device = "/dev/disk/by-uuid/DFF3-BAB2";
       fsType = "vfat";
-      options = [ "fmask=0022" "dmask=0022" ];
+      options = [ "fmask=0077" "dmask=0077" ];
     };
 
   swapDevices = [ ];
