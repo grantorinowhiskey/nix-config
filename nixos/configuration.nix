@@ -158,11 +158,11 @@
    micro
    mission-center
    mullvad-closest
-   # mullvad-vpn # needs systemd-resolved # Not working properly under 24.05. Using via network manager
+   mullvad-vpn # needs systemd-resolved # Not working properly under 24.05. Using via network manager
    nerdfonts
    nh
    nixos-generators
-   # obsidian # builds failing, resorting to flatpak instead
+   obsidian # builds failing, resorting to flatpak instead
    onlyoffice-bin_latest
    papirus-icon-theme
    ptyxis
