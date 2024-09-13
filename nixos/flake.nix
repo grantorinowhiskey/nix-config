@@ -16,6 +16,9 @@
         # Import the new GNOME module
         ./gnome.nix
 
+        # Import gaming module
+        ./gaming.nix
+
         {
           _module.args = { inherit inputs; };
         }

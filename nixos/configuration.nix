@@ -168,7 +168,6 @@
    ptyxis
    spotify
    starship
-   steam-run
    svtplay-dl
    tealdeer
    ventoy-full
