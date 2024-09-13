@@ -253,6 +253,14 @@
         user = "jt";
         dataDir = "/home/jt/";    # Default folder for new synced folders
         configDir = "/home/jt/.config/syncthing";   # Folder for Syncthing's settings and keys
+        overrideDevices = true;     # overrides any devices added or deleted through the WebUI
+        overrideFolders = true;     # overrides any folders added or deleted through the WebUI
+        settings = {
+          devices = {
+            "pi" = { id = "EAY7MGV-4T44M7A-FNLKHD7-2IUMJV5-LXSV57E-736GQ6N-WJS2XOI-FQDUVQH"; };
+            "desktop-archlinux" = { id = "DEVU2F6OP4-NGOV7GX-MN7B7OL-JQRXOEX-RDXS2GB-BMG3YLV-6IYXHB4-J4PFCAR"; };
+          };
+      };    
     };
   };
 
