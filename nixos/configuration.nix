@@ -136,6 +136,7 @@
    boxbuddy
    brave
    celluloid
+   clapper
    curl
    discord
    disko
