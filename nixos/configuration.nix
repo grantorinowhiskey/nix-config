@@ -181,6 +181,7 @@
 
    # Unstable packages
    unstablePackages.ladybird
+   unstablePackages.zed-editor
 
    # vscodium extensions
    (vscode-with-extensions.override {
