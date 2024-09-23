@@ -179,6 +179,9 @@
    yubioath-flutter
    zellij
 
+   # Unstable packages
+   unstablePackages.ladybird
+
    # vscodium extensions
    (vscode-with-extensions.override {
        vscode = vscodium;

@@ -4,9 +4,10 @@
   inputs = {
     # NixOS official package source, using the nixos-24.05 branch here
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixos-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
+  outputs = { self, nixpkgs, nixos-unstable, ... }@inputs: {
     nixosConfigurations.nix-t14 = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -21,6 +22,13 @@
 
         {
           _module.args = { inherit inputs; };
+
+          # Add an overlay to use nixos-unstable for select packages
+          nixpkgs.overlays = [
+            (final: prev: {
+              unstablePackages = inputs.nixos-unstable.legacyPackages.${final.system};
+            })
+          ];
         }
       ];
     };
