@@ -136,7 +136,6 @@
    bottom
    boxbuddy
    brave
-   celluloid
    clapper
    curl
    discord
