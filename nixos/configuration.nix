@@ -86,7 +86,7 @@
 
   # Virtualisation support
   virtualisation.libvirtd.enable = true;
-  
+
   # Enable common container config files in /etc/containers
   virtualisation.containers.enable = true;
   virtualisation = {
@@ -167,12 +167,13 @@
    onlyoffice-bin_latest
    papirus-icon-theme
    ptyxis
+   quickemu
    spotify
    starship
    svtplay-dl
    tealdeer
    ventoy-full
-   virt-manager       
+   virt-manager
    vscodium # see below for extensions
    wget
    yt-dlp
@@ -208,7 +209,7 @@
   # allowReboot = false;
   # operation = "boot";
   # };
-  
+
   # Automatic garbage collection, per recommendations from the wiki
   nix.gc = {
   automatic = true;
@@ -228,11 +229,11 @@
     };
   };
   # Enabling firmware updates
-  services.fwupd.enable = true;  
+  services.fwupd.enable = true;
 
   # Flatpak support
   services.flatpak.enable = true;
-  
+
   # Disable power profiles daemon to make sure auto-cpufreq starts at boot
   services.power-profiles-daemon.enable = false;
 
@@ -265,7 +266,7 @@
             "pi" = { id = "EAY7MGV-4T44M7A-FNLKHD7-2IUMJV5-LXSV57E-736GQ6N-WJS2XOI-FQDUVQH"; };
             "desktop-archlinux" = { id = "DEVU2F6OP4-NGOV7GX-MN7B7OL-JQRXOEX-RDXS2GB-BMG3YLV-6IYXHB4-J4PFCAR"; };
           };
-      };    
+      };
     };
   };
 
