@@ -180,9 +180,9 @@
    yubioath-flutter
    zellij
 
-   # Unstable packages
-   unstablePackages.ladybird
-   unstablePackages.zed-editor
+   # Unstable packages (disabled in flake for now)
+   # unstablePackages.ladybird
+   # unstablePackages.zed-editor
 
    # vscodium extensions
    (vscode-with-extensions.override {
