@@ -7,7 +7,7 @@
     # nixos-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
 
-  outputs = { self, nixpkgs, nixos-unstable, ... }@inputs: {
+  outputs = { self, nixpkgs, ... }@inputs: {
     nixosConfigurations.nix-t14 = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -15,6 +15,6 @@
         ./gnome.nix
         ./gaming.nix
           ];
-        }
-    };  
+    };
+  };  
 }
