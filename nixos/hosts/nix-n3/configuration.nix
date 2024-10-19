@@ -21,6 +21,7 @@
 
   # hostname
   networking.hostName = "nix-n3";
+  networking.hostId = "8425e349"
 
 
   services.openssh.enable = true;
