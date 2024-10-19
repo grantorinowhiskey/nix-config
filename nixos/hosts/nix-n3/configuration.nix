@@ -16,6 +16,12 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # zram
+  zramSwap.enable = true;
+
+  # hostname
+  networking.hostName = "nix-n3";
+
 
   services.openssh.enable = true;
 
