@@ -19,7 +19,6 @@
   # ZFS
   boot.supportedFilesystems = [ "zfs" ];
   boot.zfs.forceImportRoot = false;
-  boot.zfs.extraPools = [ "media" ];
   services.zfs.autoScrub.enable = true;
 
   # zram
