@@ -27,6 +27,7 @@
         modules = [
           disko.nixosModules.disko
           ./hosts/nix-n3/configuration.nix
+          ./hosts/nix-n3/hardware-configuration.nix
         ];
       };
     };
