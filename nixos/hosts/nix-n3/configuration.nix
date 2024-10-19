@@ -20,6 +20,7 @@
   boot.supportedFilesystems = [ "zfs" ];
   boot.zfs.forceImportRoot = false;
   services.zfs.autoScrub.enable = true;
+  boot.zfs.devNodes = "/dev/disk/by-label";
 
   # zram
   zramSwap.enable = true;
