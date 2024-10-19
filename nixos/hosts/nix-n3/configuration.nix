@@ -54,6 +54,7 @@
   environment.systemPackages = map lib.lowPrio [
     pkgs.curl
     pkgs.gitMinimal
+    pkgs.micro
   ];
 
   users.users.root.openssh.authorizedKeys.keys = [
