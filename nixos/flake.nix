@@ -4,9 +4,12 @@
   inputs = {
     # NixOS official package source, using the nixos-24.05 branch here
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    disko.url = "github:nix-community/disko";
+    disko.inputs.nixpkgs.follows = "nixpkgs";
+    nixos-facter-modules.url = "github:numtide/nixos-facter-modules";
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
+  outputs = { self, nixpkgs, disko, nixos-facter-modules, ... }@inputs: {
     nixosConfigurations = {
       # Configuration for host nix-t14
       nix-t14 = nixpkgs.lib.nixosSystem {
@@ -22,6 +25,7 @@
       nix-n3 = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
+          disko.nixosModules.disko
           ./hosts/nix-n3/configuration.nix
         ];
       };
