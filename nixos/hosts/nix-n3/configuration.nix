@@ -21,6 +21,7 @@
   boot.zfs.forceImportRoot = false;
   services.zfs.autoScrub.enable = true;
   boot.zfs.devNodes = "/dev/disk/by-label";
+  boot.initrd.kernelModules = [ "zfs" ];
 
   # zram
   zramSwap.enable = true;
