@@ -30,7 +30,7 @@
       };
       hdd1 = {
         type = "disk";
-        device = "/dev/sdb";
+        device = "/dev/sda";
         content = {
           type = "gpt";
           partitions = {
@@ -46,7 +46,7 @@
       };
       hdd2 = {
         type = "disk"; # CHANGE
-        device = "/dev/sdc"; # CHANGE
+        device = "/dev/sdb"; # CHANGE
         content = {
           type = "gpt";
           partitions = {
