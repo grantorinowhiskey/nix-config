@@ -159,11 +159,11 @@
    micro
    mission-center
    mullvad-closest
-   mullvad-vpn # needs systemd-resolved # Not working properly under 24.05. Using via network manager
+   mullvad-vpn 
    nerdfonts
    nh
    nixos-generators
-   obsidian # builds failing, resorting to flatpak instead
+   obsidian 
    onlyoffice-bin_latest
    papirus-icon-theme
    ptyxis
@@ -172,6 +172,7 @@
    starship
    svtplay-dl
    tealdeer
+   vaults # GTK4 frontend for gocryptfs
    ventoy-full
    virt-manager
    vscodium # see below for extensions
@@ -192,14 +193,6 @@
        ];
      })
   ];
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
 
   # List services that you want to enable:
 
