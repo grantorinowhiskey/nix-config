@@ -9,7 +9,7 @@
     # nixos-facter-modules.url = "github:numtide/nixos-facter-modules";
   };
 
-  outputs = { self, nixpkgs, disko, nixos-facter-modules, ... }@inputs: {
+  outputs = { self, nixpkgs, ... }@inputs: {
     nixosConfigurations = {
       # Configuration for host nix-t14
       nix-t14 = nixpkgs.lib.nixosSystem {
