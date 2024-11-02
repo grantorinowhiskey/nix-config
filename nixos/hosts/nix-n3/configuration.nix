@@ -43,6 +43,12 @@
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
   };
 
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
+  # Flake support and nix commandand-line tool
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
