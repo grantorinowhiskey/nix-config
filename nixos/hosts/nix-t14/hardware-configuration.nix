@@ -25,6 +25,9 @@
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
+  
+  # SSD-trim, only for ext4
+  services.fstrim.enable = lib.mkDefault true;
 
   swapDevices = [ ];
 
