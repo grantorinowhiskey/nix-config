@@ -59,6 +59,7 @@
     curl
     fastfetch
     fish
+    fzf
     git
     htop
     lm_sensors
