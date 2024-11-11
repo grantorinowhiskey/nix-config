@@ -15,7 +15,7 @@
         modules = [
           ./nixos/hosts/nix-t14/configuration.nix
           ./nixos/modules/gnome.nix
-          ./nixos/modules/gaming.
+          ./nixos/modules/gaming.nix
           sops-nix.nixosModules.sops
         ];
       };
