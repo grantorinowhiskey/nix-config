@@ -113,6 +113,10 @@
     ];
   };
 
+  # Environment variable for text editor
+  environment.variables = {
+    EDITOR = "micro";
+  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
