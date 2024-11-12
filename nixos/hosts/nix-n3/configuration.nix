@@ -68,6 +68,9 @@
     htop
     lm_sensors
     zellij
+    jellyfin
+    jellyfin-web
+    jellyfin-ffmpeg
   ];
 
   # List services that you want to enable:
@@ -98,6 +101,12 @@
 
   # tailscale
   services.tailscale.enable = true;
+
+  # jellyfin
+  services.jellyfin = {
+    enable = true;
+    openFirewall = true;
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
