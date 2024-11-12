@@ -27,6 +27,22 @@
   networking.hostId = "7fc991b6";
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
+  # hardware accelerated video
+  nixpkgs.config.packageOverrides = pkgs: {
+    vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
+  };
+
+  hardware.opengl = { # hardware.opengl in 24.05
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver
+      intel-vaapi-driver # previously vaapiIntel
+      vaapiVdpau
+      intel-compute-runtime # OpenCL filter support (hardware tonemapping and subtitle burn-in)
+      onevpl-intel-gpu # QSV on 11th gen or newer
+    ];
+  };
+
   # Set your time zone.
   time.timeZone = "Europe/Stockholm";
 
@@ -71,6 +87,7 @@
     jellyfin
     jellyfin-web
     jellyfin-ffmpeg
+    intel-gpu-tools
   ];
 
   # List services that you want to enable:
