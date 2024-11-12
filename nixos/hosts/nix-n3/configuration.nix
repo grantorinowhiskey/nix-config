@@ -43,6 +43,12 @@
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
   };
 
+  # sudo
+  security.sudo = {
+  	enable = true;
+  	wheelNeedsPassword = false;
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -52,14 +58,12 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    bat
     micro 
     wget
     bottom
     curl
     fastfetch
     fish
-    fzf
     git
     htop
     lm_sensors
@@ -68,8 +72,14 @@
 
   # List services that you want to enable:
 
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+  # SSH-settings
+  services.openssh = {
+  	enable = true;
+  	settings = {
+  		PasswordAuthentication = false;
+  		PermitRootLogin = "no";
+  	};
+  };
 
   # Enabling firmware updates
   services.fwupd.enable = true;
@@ -85,6 +95,9 @@
 
   # Enable thermald
   services.thermald.enable = true;
+
+  # tailscale
+  services.tailscale.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -117,4 +130,3 @@
   system.stateVersion = "24.05"; # Did you read the comment?
 
 }
-
