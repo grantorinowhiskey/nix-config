@@ -295,7 +295,7 @@
   programs.starship = {
     enable = true;
     settings = {
-      heuristic = "true";
+      nix_shell.heuristic = true;
     };
   };
 
