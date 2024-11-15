@@ -194,6 +194,9 @@
        vscode = vscodium;
        vscodeExtensions = with vscode-extensions; [
          jnoortheen.nix-ide
+         piousdeer.adwaita-theme
+         ms-vscode-remote.remote-ssh
+         ms-azuretools.vscode-docker
        ];
      })
   ];
