@@ -127,13 +127,13 @@
   };
 
   # radarr
-  sevices.radarr = {
+  services.radarr = {
     enable = true;
     openFirewall = true;
   };
 
   # sonarr
-  sevices.sonarr = {
+  services.sonarr = {
     enable = true;
     openFirewall = true;
   };
