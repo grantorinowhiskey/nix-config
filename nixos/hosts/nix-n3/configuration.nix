@@ -120,30 +120,6 @@
   # tailscale
   services.tailscale.enable = true;
 
-  # jellyfin
-  services.jellyfin = {
-    enable = true;
-    openFirewall = true;
-  };
-
-  # radarr
-  services.radarr = {
-    enable = true;
-    openFirewall = true;
-  };
-
-  # sonarr
-  services.sonarr = {
-    enable = true;
-    openFirewall = true;
-  };
-
-  # sabnzbd
-  services.sabnzbd = {
-    enable = true;
-    openFirewall = true;
-  };
-
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
