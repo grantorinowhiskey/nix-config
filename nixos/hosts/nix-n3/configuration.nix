@@ -141,6 +141,7 @@
   # sabnzbd
   services.sabnzbd = {
     enable = true;
+    openFirewall = true;
   };
 
   # Open ports in the firewall.
