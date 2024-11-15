@@ -3,6 +3,7 @@
   # Enable common container config files in /etc/containers
   virtualisation.podman = {
     enable = true;
+    extraPackages = [ pkgs.zfs ]; # Helps with failed restarts according to https://discourse.nixos.org/t/podman-containers-always-fail-to-start/11908/2
     autoPrune.enable = true;
     dockerCompat = true;
     defaultNetwork.settings = {
