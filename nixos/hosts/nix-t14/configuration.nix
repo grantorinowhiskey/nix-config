@@ -291,7 +291,7 @@
   programs.fish = {
     enable = true;
     shellAliases = {
-      man = "batman";
+      man = "batman --paging=always";
     };
   };
 
