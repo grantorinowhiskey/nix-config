@@ -28,9 +28,9 @@
       "TZ" = "Etc/UTC";
     };
     volumes = [
-      # "/path/to/downloads:/downloads:rw"
-      # "/path/to/incomplete/downloads:/incomplete-downloads:rw"
-      "/var/lib/containers/storage/sabnzbd/config:/config:rw"
+      "/home/jt/appdata/sabnzbd/downloads:/downloads:rw"
+      "/home/jt/appdata/sabnzbd/downloads:/incomplete-downloads:rw"
+      "/home/jt/appdata/sabnzbd/config:/config:rw"
     ];
     ports = [
       "8080:8080/tcp"
