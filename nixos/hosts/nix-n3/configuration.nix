@@ -126,6 +126,18 @@
     openFirewall = true;
   };
 
+  # radarr
+  sevices.radarr = {
+    enable = true;
+    openFirewall = true;
+  };
+
+  # sonarr
+  sevices.sonarr = {
+    enable = true;
+    openFirewall = true;
+  };
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
