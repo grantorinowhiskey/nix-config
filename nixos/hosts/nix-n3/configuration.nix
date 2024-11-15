@@ -75,20 +75,22 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    micro 
-    wget
     bottom
     curl
     fastfetch
     fish
     git
     htop
-    lm_sensors
-    zellij
-    jellyfin
-    jellyfin-web
-    jellyfin-ffmpeg
     intel-gpu-tools
+    jellyfin
+    jellyfin-ffmpeg
+    jellyfin-web
+    lm_sensors
+    micro
+    podman
+    podman-compose
+    wget
+    zellij
   ];
 
   # Enable common container config files in /etc/containers
