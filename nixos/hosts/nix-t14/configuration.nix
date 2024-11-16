@@ -128,6 +128,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
    amberol
+   alejandra # nix language formatter
    aria2 # CLI-download manager
    bat
    bat-extras.batdiff
