@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, programs, ... }:
+{ config, pkgs, inputs, programs, ... }:
 
 {
   imports =
@@ -166,6 +166,7 @@
    mullvad-vpn 
    nerdfonts
    nh
+   nixd # nix language server
    nixos-generators
    obsidian 
    onlyoffice-bin_latest
@@ -200,6 +201,8 @@
        ];
      })
   ];
+
+  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ]; # Recommended for nixd language server
 
   # List services that you want to enable:
 
