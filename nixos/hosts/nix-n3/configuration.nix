@@ -8,7 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./containers.nix
+      # ./containers.nix # Excluded for now, trying to get it working with straight docker-compose instead
     ];
 
   # Use the systemd-boot EFI boot loader.
