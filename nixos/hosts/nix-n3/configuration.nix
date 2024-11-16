@@ -8,7 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./containers.nix
+      ./services.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -58,7 +58,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.jt = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "podman" ];
+    extraGroups = [ "wheel" ];
   };
 
   # sudo
@@ -88,8 +88,6 @@
     jellyfin-web
     lm_sensors
     micro
-    podman
-    podman-compose
     wget
     zellij
   ];
