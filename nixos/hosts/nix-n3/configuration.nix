@@ -45,6 +45,16 @@
     ];
   };
 
+  virtualisation = {
+    docker = {
+      enable = true;
+      autoPrune = {
+        enable = true;
+        dates = "weekly";
+      };
+    };
+  };
+
   # Set your time zone.
   time.timeZone = "Europe/Stockholm";
 
