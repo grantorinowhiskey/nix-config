@@ -208,13 +208,6 @@
 
   # List services that you want to enable:
 
-  # Automatic upgrades
-  # system.autoUpgrade = {
-  # enable = true;
-  # allowReboot = false;
-  # operation = "boot";
-  # };
-
   # Automatic garbage collection, per recommendations from the wiki
   nix.gc = {
   automatic = true;
