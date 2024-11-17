@@ -127,9 +127,9 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+   alejandra
    amberol
-   alejandra # nix language formatter
-   aria2 # CLI-download manager
+   aria2
    bat
    bat-extras.batdiff
    bat-extras.batgrep
@@ -158,7 +158,7 @@
    htop
    hugo
    intel-gpu-tools
-   inter # proposed font for gnome
+   inter 
    lm_sensors
    localsend
    micro
@@ -167,19 +167,20 @@
    mullvad-vpn 
    nerdfonts
    nh
-   nixd # nix language server
+   nixd 
    nixos-generators
    obsidian 
    onlyoffice-bin_latest
    papirus-icon-theme
    ptyxis
    quickemu
+   sops
    spotify
    ssh-to-age
    starship
    svtplay-dl
    tealdeer
-   vaults # GTK4 frontend for gocryptfs
+   vaults 
    ventoy-full
    virt-manager
    vscodium # see below for extensions
@@ -248,7 +249,7 @@
   # Enable systemd-resolved
   services.resolved.enable = true;
 
-  # Mullvad # Disabled since package not working under 24.05. Using wg cert in network manager
+  # Mullvad
   services.mullvad-vpn.enable = true;
 
   # Syncthing, https://nixos.wiki/wiki/Syncthing
@@ -298,7 +299,7 @@
   programs.starship = {
     enable = true;
     settings = {
-      nix_shell.heuristic = true;
+      nix_shell.heuristic = true; # Provides a nix shell prompt in nix shell
     };
   };
 
