@@ -175,6 +175,7 @@
    ptyxis
    quickemu
    spotify
+   ssh-to-age
    starship
    svtplay-dl
    tealdeer
