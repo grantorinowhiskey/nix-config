@@ -7,7 +7,7 @@
     sops-nix.url = "github:Mic92/sops-nix";
   };
 
-  outputs = { self, nixpkgs, sops-nix, ... }@inputs: {
+  outputs = { nixpkgs, sops-nix, ... }@inputs: {
     nixosConfigurations = {
       # Configuration for host nix-t14
       nix-t14 = nixpkgs.lib.nixosSystem {
