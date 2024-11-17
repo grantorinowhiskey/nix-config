@@ -183,6 +183,7 @@
    virt-manager
    vscodium # see below for extensions
    wget
+   yazi
    yt-dlp
    yubioath-flutter
    zellij
