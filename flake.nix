@@ -17,6 +17,15 @@
           ./nixos/modules/gnome.nix
           ./nixos/modules/gaming.nix
           sops-nix.nixosModules.sops
+          {
+            sops = {
+              defaultSopsfile = ./secrets/secrets.yaml;
+              age.sshKeyPaths = ["etc/ssh/ssh_host_ed25519_key"];
+              secrets = {
+                "tailscale/authkey" = {};
+              };
+            };
+          }
         ];
       };
 
@@ -26,6 +35,7 @@
         modules = [
           ./nixos/hosts/nix-n3/configuration.nix
           ./nixos/hosts/nix-n3/hardware-configuration.nix
+          sops-nix.nixosModules.sops
         ];
       };
     };
