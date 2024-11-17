@@ -1,7 +1,9 @@
 keys:
-  - &key1 age16ylea0u4r20dfx036wlfhstalv3m96e94v4aeteg9awta9d45fmsnm4pwp
+  - &admin_jt age16ylea0u4r20dfx036wlfhstalv3m96e94v4aeteg9awta9d45fmsnm4pwp
+  - &server_n3 age185r2vusnxh5nk7zdcmmpse0f802g7p04h3tdgkee64lrykyj5p9skecpfe
 creation_rules:
   - path_regex: secrets/[^/]+\.(yaml|json|env|ini|sops)$
     key_groups:
       - age:
-          - *key1
+          - *admin_jt
+          - *server_n3
