@@ -1,14 +1,10 @@
 {
   services.nginx = {
     enable = true;
-    virtualHosts."ynso.duckdns.org" = {
-      useACMEHost = "ynso.duckdns.org";
-      forceSSL = true;
+    virtualHosts.localhost = {
       locations."/" = {
         return = "200 '<html><body>It works</body></html>'";
-        extraConfig = ''
-          default_type text/html;
-        '';
+        extraConfig = ''default_type text/html;'';
       };
     };
   };
