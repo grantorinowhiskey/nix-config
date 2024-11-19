@@ -19,7 +19,7 @@
   services.nginx = {
     enable = true;
     virtualHosts."jellyfin.ynso.duckdns.org" = {
-      useACMEHost = "*.ynso.duckdns.org";
+      useACMEHost = "ynso.duckdns.org";
       forceSSL = true;
       locations."/" = {
         return = "200 '<html><body>It works</body></html>'";
