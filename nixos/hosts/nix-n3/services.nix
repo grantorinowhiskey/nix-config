@@ -8,7 +8,7 @@
       dnsProvider = "duckdns";
       dnsPropagationCheck = true;
       # here we need a sops-nix solution to bring in DUCKDNS_TOKEN
-      credentialFiles = "/run/secrets/duckdns-token";
+      credentialFiles = { "DUCKDNS_TOKEN_FILE" = "/run/secrets/duckdns-token"; };
     };
   };
 
