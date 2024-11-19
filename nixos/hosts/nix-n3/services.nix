@@ -5,8 +5,7 @@
     acceptTerms = true;
     defaults.email = "z6lbxfnhi@mozmail.com";
     certs."ynso.duckdns.org" = {
-      domain = "ynso.duckdns.org";
-      extraDomainNames = [ "jellyfin.ynso.duckdns.org" ];
+      domain = "*.ynso.duckdns.org";
       dnsProvider = "duckdns";
       dnsPropagationCheck = true;
       # here we need a sops-nix solution to bring in DUCKDNS_TOKEN
