@@ -5,7 +5,8 @@
     acceptTerms = true;
     defaults.email = "z6lbxfnhi@mozmail.com";
     certs."ynso.duckdns.org" = {
-      domain = "*.ynso.duckdns.org";
+      domain = "ynso.duckdns.org";
+      extraDomainNames = [ "*.ynso.duckdns.org" ];
       dnsProvider = "duckdns";
       dnsPropagationCheck = true;
       # here we need a sops-nix solution to bring in DUCKDNS_TOKEN
@@ -19,7 +20,7 @@
   services.nginx = {
     enable = true;
     virtualHosts."jellyfin.ynso.duckdns.org" = {
-      useACMEHost = "ynso.duckdns.org";
+      useACMEHost = "*.ynso.duckdns.org";
       forceSSL = true;
       locations."/" = {
         return = "200 '<html><body>It works</body></html>'";
