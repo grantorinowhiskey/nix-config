@@ -22,6 +22,7 @@
     enable = true;
     virtualHosts = {
 
+      # jellyfin
       "jellyfin.ynso.duckdns.org" = {
         useACMEHost = "ynso.duckdns.org";
         forceSSL = true;
@@ -30,10 +31,23 @@
         };
       };
 
+      # sabnzbd
+      "sabnzbd.ynso.duckdns.org" = {
+        useACMEHost = "ynso.duckdns.org";
+        forceSSL = true;
+        locations."/" = {
+          proxyPass = "http://127.0.0.1:8080";
+        };
+      };
+
     };
   };
 
   services.jellyfin = {
+    enable = true;
+  };
+
+  services.sabnzbd = {
     enable = true;
   };
 
