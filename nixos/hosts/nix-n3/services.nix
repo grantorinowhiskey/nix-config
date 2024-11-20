@@ -40,15 +40,31 @@
         };
       };
 
+      # radarr
+      "radarr.ynso.duckdns.org" = {
+        useACMEHost = "ynso.duckdns.org";
+        forceSSL = true;
+        locations."/" = {
+          proxyPass = "http://127.0.0.1:7878";
+        };
+      };
+
     };
   };
 
   services.jellyfin = {
     enable = true;
+    # port 8096
   };
 
   services.sabnzbd = {
     enable = true;
+    # port 8080
+  };
+
+  services.radarr = {
+    enable = true;
+    # port 7878
   };
 
 }
