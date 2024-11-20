@@ -1,6 +1,7 @@
 { config, ... }:
 
 {
+  # Auto renewed SSL certificates
   security.acme = {
     acceptTerms = true;
     defaults.email = "z6lbxfnhi@mozmail.com";
@@ -8,26 +9,32 @@
       domain = "*.ynso.duckdns.org";
       dnsProvider = "duckdns";
       dnsPropagationCheck = true;
-      # here we need a sops-nix solution to bring in DUCKDNS_TOKEN
       credentialFiles = { "DUCKDNS_TOKEN_FILE" = config.sops.secrets."duckdns-token".path; 
       };
     };
   };
 
+  # Allow nginx to use certs from acme
   users.users.nginx.extraGroups = [ "acme" ];
   
+  # nginx reverse proxy
   services.nginx = {
     enable = true;
-    virtualHosts."jellyfin.ynso.duckdns.org" = {
-      useACMEHost = "ynso.duckdns.org";
-      forceSSL = true;
-      locations."/" = {
-        return = "200 '<html><body>It works</body></html>'";
-        extraConfig = ''
-          default_type text/html;
-        '';
+    virtualHosts = {
+
+      "jellyfin.ynso.duckdns.org" = {
+        useACMEHost = "ynso.duckdns.org";
+        forceSSL = true;
+        locations."/" = {
+          proxyPass = "http://127.0.0.1:8096";
+        };
       };
+
     };
+  };
+
+  services.jellyfin = {
+    enable = true;
   };
 
 }
