@@ -1,6 +1,9 @@
 { config, ... }:
 
 {
+  # multimedia user group, necessary for services access to directories
+  users.groups.multimedia = {};
+
   # Auto renewed SSL certificates
   security.acme = {
     acceptTerms = true;
@@ -55,16 +58,19 @@
   services.jellyfin = {
     enable = true;
     # port 8096
+    group = "multimedia";
   };
 
   services.sabnzbd = {
     enable = true;
     # port 8080
+    group = "multimedia";
   };
 
   services.radarr = {
     enable = true;
     # port 7878
+    group = "multimedia";
   };
 
 }
