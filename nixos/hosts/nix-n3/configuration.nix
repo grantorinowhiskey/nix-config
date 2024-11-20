@@ -31,16 +31,16 @@
   networking.nameservers = [ "1.1.1.1" "9.9.9.9" ];
 
   # hardware accelerated video
-  nixpkgs.config.packageOverrides = pkgs: {
-    vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
-  };
+  # nixpkgs.config.packageOverrides = pkgs: {
+  #   vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
+  # };
 
   hardware.opengl = { # hardware.opengl in 24.05
     enable = true;
     extraPackages = with pkgs; [
       intel-media-driver
-      intel-vaapi-driver # previously vaapiIntel
-      vaapiVdpau
+      # intel-vaapi-driver # previously vaapiIntel
+      # vaapiVdpau
       intel-compute-runtime # OpenCL filter support (hardware tonemapping and subtitle burn-in)
       onevpl-intel-gpu # QSV on 11th gen or newer
     ];
