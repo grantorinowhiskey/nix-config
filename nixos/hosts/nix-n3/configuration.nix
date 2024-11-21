@@ -31,9 +31,9 @@
   networking.nameservers = [ "1.1.1.1" "9.9.9.9" ];
 
   # hardware accelerated video
-  # nixpkgs.config.packageOverrides = pkgs: {
-  #   vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
-  # };
+  nixpkgs.config.packageOverrides = pkgs: {
+    vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
+  };
 
   hardware.opengl = { # hardware.opengl in 24.05
     enable = true;
