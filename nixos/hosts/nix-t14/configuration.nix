@@ -44,7 +44,6 @@
     LC_TIME = "sv_SE.UTF-8";
   };
 
-
   # Configure console keymap
   console.keyMap = "sv-latin1";
 
@@ -60,12 +59,6 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
   };
 
   # Hardware accelerated video playback
@@ -228,6 +221,7 @@
        turbo = "auto";
     };
   };
+
   # Enabling firmware updates
   services.fwupd.enable = true;
 
@@ -253,21 +247,19 @@
   services.mullvad-vpn.enable = true;
 
   # Syncthing, https://nixos.wiki/wiki/Syncthing
-  services = {
-    syncthing = {
-        enable = true;
-        user = "jt";
-        dataDir = "/home/jt/";    # Default folder for new synced folders
-        configDir = "/home/jt/.config/syncthing";   # Folder for Syncthing's settings and keys
-        overrideDevices = true;     # overrides any devices added or deleted through the WebUI
-        overrideFolders = true;     # overrides any folders added or deleted through the WebUI
-        settings = {
-          devices = {
-            "pi" = { id = "EAY7MGV-4T44M7A-FNLKHD7-2IUMJV5-LXSV57E-736GQ6N-WJS2XOI-FQDUVQH"; };
-            "desktop-archlinux" = { id = "DEVU2F6OP4-NGOV7GX-MN7B7OL-JQRXOEX-RDXS2GB-BMG3YLV-6IYXHB4-J4PFCAR"; };
-          };
-      };
-    };
+  services.syncthing = { 
+    enable = true;
+    user = "jt";
+    dataDir = "/home/jt/";    # Default folder for new synced folders
+    configDir = "/home/jt/.config/syncthing";   # Folder for Syncthing's settings and keys
+    overrideDevices = true;     # overrides any devices added or deleted through the WebUI
+    overrideFolders = true;     # overrides any folders added or deleted through the WebUI
+    settings = {
+      devices = {
+        "pi" = { id = "EAY7MGV-4T44M7A-FNLKHD7-2IUMJV5-LXSV57E-736GQ6N-WJS2XOI-FQDUVQH"; };
+        "desktop-archlinux" = { id = "DEVU2F6OP4-NGOV7GX-MN7B7OL-JQRXOEX-RDXS2GB-BMG3YLV-6IYXHB4-J4PFCAR"; };
+        };
+      };    
   };
 
   # Open ports in the firewall.
@@ -310,5 +302,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
-
 }
