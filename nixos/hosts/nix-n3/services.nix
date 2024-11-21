@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, nixpkgs-unstable, ... }:
 
 {
   # multimedia user group, necessary for services access to directories
@@ -12,14 +12,14 @@
       domain = "*.ynso.duckdns.org";
       dnsProvider = "duckdns";
       dnsPropagationCheck = true;
-      credentialFiles = { "DUCKDNS_TOKEN_FILE" = config.sops.secrets."duckdns-token".path; 
+      credentialFiles = { "DUCKDNS_TOKEN_FILE" = config.sops.secrets."duckdns-token".path;
       };
     };
   };
 
   # Allow nginx to use certs from acme
   users.users.nginx.extraGroups = [ "acme" ];
-  
+
   # nginx reverse proxy
   services.nginx = {
     enable = true;
@@ -86,6 +86,7 @@
     enable = true;
     # port 8989
     group = "multimedia";
+    package = nixpkgs-unstable.sonarr;
   };
 
 }
