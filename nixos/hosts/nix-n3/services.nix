@@ -74,6 +74,7 @@
     enable = true;
     # port 8080
     group = "multimedia";
+    openFirewall = true;
   };
 
   services.radarr = {
