@@ -60,7 +60,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.jt = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "multimedia" ];
+    extraGroups = [ "wheel" "multimedia" "docker" ];
   };
 
   # sudo
