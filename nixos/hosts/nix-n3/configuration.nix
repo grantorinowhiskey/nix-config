@@ -45,6 +45,7 @@
       onevpl-intel-gpu # QSV on 11th gen or newer
     ];
   };
+  environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; }; # Force intel-media-driver
 
   # virtualisation = { # disabled for the time being at least
   #   docker = {
