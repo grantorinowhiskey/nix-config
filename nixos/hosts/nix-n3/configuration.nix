@@ -47,16 +47,6 @@
   };
   environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; }; # Force intel-media-driver
 
-  # virtualisation = { # disabled for the time being at least
-  #   docker = {
-  #     enable = true;
-  #     autoPrune = {
-  #       enable = true;
-  #       dates = "weekly";
-  #     };
-  #   };
-  # };
-
   # Set your time zone.
   time.timeZone = "Europe/Stockholm";
 
@@ -70,7 +60,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.jt = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" "multimedia" ];
+    extraGroups = [ "wheel" "multimedia" ];
   };
 
   # sudo
