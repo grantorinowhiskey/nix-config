@@ -53,13 +53,13 @@
       };
 
       # sonarr
-      # "sonarr.ynso.duckdns.org" = {
-      #   useACMEHost = "ynso.duckdns.org";
-      #   forceSSL = true;
-      #   locations."/" = {
-      #     proxyPass = "http://127.0.0.1:8989";
-      #   };
-      # };
+      "sonarr.ynso.duckdns.org" = {
+        useACMEHost = "ynso.duckdns.org";
+        forceSSL = true;
+        locations."/" = {
+          proxyPass = "http://127.0.0.1:8989";
+        };
+      };
 
     };
   };
@@ -82,10 +82,10 @@
     group = "multimedia";
   };
 
-  # services.sonarr = {
-  #   enable = true;
-  #   # port 8989
-  #   group = "multimedia";
-  # };
+  services.sonarr = {
+    enable = true;
+    # port 8989
+    group = "multimedia";
+  };
 
 }
