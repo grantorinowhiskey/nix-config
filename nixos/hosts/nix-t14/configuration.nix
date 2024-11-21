@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, ... }:
+{ pkgs, nixpkgs-unstable, ... }:
 
 {
   imports =
@@ -117,8 +117,7 @@
   # Flake support and nix commandand-line tool
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+  # Packages installed in system profile
   environment.systemPackages = with pkgs; [
    alejandra
    amberol
@@ -183,10 +182,6 @@
    yubioath-flutter
    zellij
 
-   # Unstable packages (disabled in flake for now)
-   # unstablePackages.ladybird
-   # unstablePackages.zed-editor
-
    # vscodium extensions
    (vscode-with-extensions.override {
        vscode = vscodium;
@@ -197,6 +192,9 @@
          ms-azuretools.vscode-docker
        ];
      })
+
+  # unstable packages
+  nixpkgs-unstable.zed-editor
   ];
 
   # nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ]; # Recommended for nixd language server. Disabled for now, don't understand.
