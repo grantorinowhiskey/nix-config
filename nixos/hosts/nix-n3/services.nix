@@ -86,7 +86,6 @@
     enable = true;
     # port 8989
     group = "multimedia";
-    package = nixpkgs-unstable.sonarr;
   };
 
 }
