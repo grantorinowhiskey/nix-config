@@ -201,17 +201,6 @@
 
   # List services that you want to enable:
 
-  # docker
-  virtualisation = {
-    docker = {
-      enable = true;
-      autoPrune = {
-        enable = true;
-        dates = "weekly";
-      };
-    };
-  };
-
   # Automatic garbage collection, per recommendations from the wiki
   nix.gc = {
   automatic = true;
