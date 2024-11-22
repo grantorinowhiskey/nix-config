@@ -6,11 +6,9 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     sops-nix.url = "github:Mic92/sops-nix";
-    # old package for sonarr
-    nixpkgs-e08a8231.url = "github:NixOS/nixpkgs/e08a8231e2c827f586e64727c1063c5e61dbc00d";
   };
 
-  outputs = { nixpkgs, nixpkgs-unstable, nixpkgs-e08a8231, sops-nix, ... }@inputs: {
+  outputs = { nixpkgs, nixpkgs-unstable, sops-nix, ... }@inputs: {
     nixosConfigurations = {
       # Configuration for host nix-t14
       nix-t14 = nixpkgs.lib.nixosSystem {
@@ -36,10 +34,6 @@
           nixpkgs-unstable = import nixpkgs-unstable {
             system = "x86_64-linux";
             config.allowUnfree = true;
-          };
-          nixpkgs-e08a8231 = import nixpkgs-e08a8231 {
-            system = "x86_64-linux";
-            configallowUnfree = true;
           };
         };
         modules = [
