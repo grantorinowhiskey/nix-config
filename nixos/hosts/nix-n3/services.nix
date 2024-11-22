@@ -88,6 +88,14 @@
     group = "multimedia";
   };
 
+  # Användare för sonarr nedan
+  users.users.sonarr = {
+    isSystemUser = true;
+    description = "Sonarr service user";
+    uid = 1000;
+    group = "multimedia";
+  };
+
   # containers
   # Runtime
   virtualisation.docker = {
@@ -100,8 +108,8 @@
   virtualisation.oci-containers.containers."sonarr" = {
     image = "linuxserver/sonarr:4.0.10";
     environment = {
-      "PGID" = "990"; # Adjusted to match user sabnzbd
-      "PUID" = "38"; # Adjusted to match user sabnzbd
+      "PGID" = "1000"; # Adjusted to match user sabnzbd
+      "PUID" = "1000"; # Adjusted to match user sabnzbd
       "TZ" = "Europe/Stockholm";
     };
     volumes = [
@@ -119,6 +127,8 @@
   };
   systemd.services."docker-sonarr" = {
     serviceConfig = {
+      user = "sonarr";
+      group = "multimedia";
       Restart = lib.mkOverride 90 "always";
       RestartMaxDelaySec = lib.mkOverride 90 "1m";
       RestartSec = lib.mkOverride 90 "100ms";
