@@ -8,7 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./services.nix
+      # ./services.nix # disabled for now since sonarr won't work. Leaning on docker instead.
     ];
 
   # Use the systemd-boot EFI boot loader.
