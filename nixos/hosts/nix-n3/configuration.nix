@@ -79,6 +79,7 @@
   environment.systemPackages = with pkgs; [
     alejandra
     aria2
+    bat
     bat-extras.batdiff
     bat-extras.batgrep
     bat-extras.batman
