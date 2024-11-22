@@ -100,8 +100,8 @@
   virtualisation.oci-containers.containers."sonarr" = {
     image = "linuxserver/sonarr:4.0.10";
     environment = {
-      "PGID" = "1000";
-      "PUID" = "1000";
+      "PGID" = "990"; # Adjusted to match user sabnzbd
+      "PUID" = "38"; # Adjusted to match user sabnzbd
       "TZ" = "Europe/Stockholm";
     };
     volumes = [
