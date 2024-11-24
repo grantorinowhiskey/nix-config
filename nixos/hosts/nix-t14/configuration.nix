@@ -160,12 +160,12 @@
    nh
    nixd 
    nixos-generators
+   nixos-shell
    obsidian 
    onlyoffice-bin_latest
    papirus-icon-theme
    ptyxis
    quickemu
-   sbctl # for debugging and troubleshooting Secure Boot.
    sops
    spotify
    ssh-to-age
