@@ -62,6 +62,8 @@
     extraGroups = [ "wheel" "multimedia" "docker" ];
   };
 
+  users.groups.multimedia = {};
+
   # sudo
   security.sudo = {
   	enable = true;
