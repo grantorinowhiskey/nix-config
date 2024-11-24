@@ -95,6 +95,7 @@
     gocryptfs
     htop
     intel-gpu-tools
+    jellyfin-ffmpeg
     lm_sensors
     micro
     wget
