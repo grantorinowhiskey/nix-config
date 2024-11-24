@@ -6,13 +6,9 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     sops-nix.url = "github:Mic92/sops-nix";
-    lanzaboote = {
-      url = "github:nixcommunity/lanzaboote";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
-  outputs = { nixpkgs, nixpkgs-unstable, sops-nix, lanzaboote, ... }@inputs: {
+  outputs = { nixpkgs, nixpkgs-unstable, sops-nix, ... }@inputs: {
     nixosConfigurations = {
       # Configuration for host nix-t14
       nix-t14 = nixpkgs.lib.nixosSystem {
@@ -28,7 +24,6 @@
           ./nixos/modules/gnome.nix
           ./nixos/modules/gaming.nix
           sops-nix.nixosModules.sops
-          lanzaboote.nixosModuels.lanzaboote
         ];
       };
 
