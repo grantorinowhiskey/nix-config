@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, nixpkgs-unstable, ... }:
+{ pkgs, lib, nixpkgs-unstable, ... }:
 
 {
   imports =
@@ -13,6 +13,17 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  # secureboot, lanzaboote overrides
+  # Lanzaboote currently replaces the systemd-boot module.
+  # This setting is usually set to true in configuration.nix
+  # generated at installation time. So we force it to false
+  # for now.
+  boot.loader.systemd-boot.enable = lib.mkForce false;
+
+  boot.lanzaboote = {
+    enable = true;
+    pkiBundle = "/etc/secureboot";
 
   # zram
   zramSwap.enable = true;
@@ -166,6 +177,7 @@
    papirus-icon-theme
    ptyxis
    quickemu
+   sbctl # for debugging and troubleshooting Secure Boot.
    sops
    spotify
    ssh-to-age
