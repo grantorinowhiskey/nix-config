@@ -7,7 +7,7 @@
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     sops-nix.url = "github:Mic92/sops-nix";
     lanzaboote = {
-      url = "github:nixcommunity/lanzaboote/v0.4.1";
+      url = "github:nixcommunity/lanzaboote";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
