@@ -100,8 +100,10 @@
     jellyfin-ffmpeg
     lm_sensors
     micro
+    svtplay-dl
     wget
     yazi
+    yt-dlp
     zellij
   ];
 
