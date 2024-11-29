@@ -103,7 +103,7 @@
     svtplay-dl
     wget
     yazi
-    yt-dlp
+    nixpkgs-unstable.yt-dlp
     zellij
   ];
 
