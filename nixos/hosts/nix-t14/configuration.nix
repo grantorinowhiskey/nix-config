@@ -167,7 +167,7 @@
    wget
    yazi
    yt-dlp
-   yubioath-flutter
+   # yubioath-flutter
    zellij
 
    # vscodium extensions
