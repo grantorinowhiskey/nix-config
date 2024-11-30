@@ -49,6 +49,7 @@
    gnomeExtensions.caffeine
    gnomeExtensions.middle-click-to-close-in-overview
    gnomeExtensions.mullvad-indicator
+   gnome-tweaks
   ];
 
   # Exclusion of certain gnome applications

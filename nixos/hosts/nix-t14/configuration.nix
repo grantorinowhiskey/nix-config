@@ -132,7 +132,6 @@
    fragments
    fzf
    git
-   gnome.gnome-tweaks
    gnupg1
    gocryptfs
    htop
