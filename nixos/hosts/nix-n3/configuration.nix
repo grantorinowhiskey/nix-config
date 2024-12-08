@@ -81,6 +81,7 @@
   environment.systemPackages = with pkgs; [
     alejandra
     aria2
+    bashmount
     bat
     bat-extras.batdiff
     bat-extras.batgrep
