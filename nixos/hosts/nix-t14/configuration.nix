@@ -130,6 +130,7 @@
    fastfetch
    fish
    fragments
+   ffmpeg-full
    fzf
    git
    gnupg1
