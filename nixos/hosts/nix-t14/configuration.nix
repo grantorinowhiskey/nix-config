@@ -59,6 +59,7 @@
       extraPackages = with pkgs; [
         intel-media-driver
         intel-compute-runtime
+        vpl-gpu-rt
       ];
     };
     environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; }; # Force intel-media-driver
