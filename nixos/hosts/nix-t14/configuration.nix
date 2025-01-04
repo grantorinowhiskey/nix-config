@@ -185,6 +185,7 @@
 
   # unstable packages
   nixpkgs-unstable.zed-editor
+  nixpkgs-unstable.ghostty
   ];
 
   # nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ]; # Recommended for nixd language server. Disabled for now, don't understand.
