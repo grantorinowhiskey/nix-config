@@ -138,6 +138,7 @@
    home-manager
    htop
    hugo
+   jellyfin-media-player
    intel-gpu-tools
    inter 
    lm_sensors
