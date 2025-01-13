@@ -121,6 +121,7 @@
    bottom
    boxbuddy
    brave
+   buffer
    clapper
    curl
    discord
