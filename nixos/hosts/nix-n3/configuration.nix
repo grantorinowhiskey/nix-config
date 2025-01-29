@@ -99,6 +99,8 @@
     htop
     intel-gpu-tools
     jellyfin-ffmpeg
+    lazydocker
+    lazygit
     lm_sensors
     micro
     svtplay-dl

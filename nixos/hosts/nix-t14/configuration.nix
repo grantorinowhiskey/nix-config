@@ -142,6 +142,8 @@
    jellyfin-media-player
    intel-gpu-tools
    inter 
+   lazydocker
+   lazygit
    lm_sensors
    localsend
    micro
