@@ -186,7 +186,7 @@
   services.tailscale.enable = true;
 
   # firwall
-  networking.firewall.allowedTCPPorts = [ 80 81 443 8080 45876 ];
+  networking.firewall.allowedTCPPorts = [ 80 81 443 8080 10001 45876 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
