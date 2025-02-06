@@ -1,6 +1,29 @@
 { config, pkgs, lib, ... }:
 
+let
+  mutter-triple-buffering = final: prev: {
+    mutter = prev.mutter.overrideAttrs (oldAttrs: {
+      version = "47.0-triple-buffering-v4";
+      
+      src = final.fetchFromGitLab {
+        domain = "gitlab.gnome.org";
+        owner = "Community/Ubuntu";
+        repo = "mutter";
+        ref = "triple-buffering-v4-47";
+        sha256 = "sha256-wPVhviQi2DtRkjALDSIRtI3aPeWgkYGu2VHo7+sXPnA=";
+      };
+    });
+  };
+in
 {
+  nixpkgs.overlays = [
+    (final: prev: {
+      gnome = prev.gnome.overrideScope' (self: super: {
+        mutter = mutter-triple-buffering final prev;
+      });
+    })
+  ];
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -15,6 +38,7 @@
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
+  
   # Configure keymap in X11
   services.xserver = {
     xkb.layout = "se";
