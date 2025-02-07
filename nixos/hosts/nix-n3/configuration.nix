@@ -59,7 +59,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.jt = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "multimedia" "docker" ];
+    extraGroups = [ "wheel" "multimedia" "docker" "libvirtd" ];
   };
 
   users.groups.multimedia = {};
@@ -146,6 +146,9 @@
         enable = true;
         dates = "weekly";
       };
+    };
+    libvirtd = {
+      enable = true;
     };
   };
 
