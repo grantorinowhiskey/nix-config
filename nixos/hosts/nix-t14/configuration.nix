@@ -139,9 +139,10 @@
    home-manager
    htop
    hugo
-   jellyfin-media-player
+   impression
    intel-gpu-tools
    inter 
+   jellyfin-media-player
    lazydocker
    lazygit
    lm_sensors
