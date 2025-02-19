@@ -53,6 +53,7 @@ in
    gnomeExtensions.caffeine
    gnomeExtensions.middle-click-to-close-in-overview
    gnomeExtensions.mullvad-indicator
+   gnomeExtensions.tailscale-qs
    gnome-tweaks
   ];
 
