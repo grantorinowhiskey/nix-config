@@ -149,6 +149,7 @@
    localsend
    micro
    mission-center
+   morewaita-icon-theme
    mullvad-closest
    mullvad-vpn 
    nerdfonts
