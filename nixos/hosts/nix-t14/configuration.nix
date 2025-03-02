@@ -20,9 +20,6 @@
   # hostname
   networking.hostName = "nix-t14";
 
-  # Kernel, using latest
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
   # Enable networking
   networking.networkmanager.enable = true;
 
