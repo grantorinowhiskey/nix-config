@@ -210,7 +210,7 @@
         turbo = "auto";
       };
       battery = {
-        governor = "performance";
+        governor = "powersave";
         turbo = "auto";
       };
     };
