@@ -257,10 +257,10 @@
   };
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 53317 ]; # Opened for localsend
-  networking.firewall.allowedUDPPorts = [ 53317 ]; # Opened for localsend
+  # networking.firewall.allowedTCPPorts = [ 53317 ]; # Opened for localsend
+  # networking.firewall.allowedUDPPorts = [ 53317 ]; # Opened for localsend
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall.enable = false;
 
   # Workaround to get fish as the default interactive shell, and still using bash
   # as the system-shell
