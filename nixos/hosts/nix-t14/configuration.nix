@@ -126,9 +126,9 @@
    distrobox
    element-desktop
    fastfetch
+   ffmpeg-full
    fish
    fragments
-   ffmpeg-full
    fzf
    git
    gnupg1
@@ -159,6 +159,7 @@
    papirus-icon-theme
    ptyxis
    quickemu
+   resources
    sops
    spotify
    ssh-to-age
