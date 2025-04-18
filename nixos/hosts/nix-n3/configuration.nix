@@ -138,6 +138,12 @@
 
   # List services that you want to enable:
 
+  # Code server
+  services.code-server = {
+    enable = true;
+    disableTelemetry = true;
+  };
+
   # docker
   virtualisation = {
     docker = {
