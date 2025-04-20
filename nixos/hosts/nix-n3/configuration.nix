@@ -198,6 +198,7 @@
   services.syncthing = { 
     enable = true;
     openDefaultPorts = true;
+    guiAddress = "0.0.0.0:8384";
     user = "jt";
     dataDir = "/home/jt/appdata/syncthing/data";    # Default folder for new synced folders
     configDir = "/home/jt/appdata/syncthing/config";   # Folder for Syncthing's settings and keys
