@@ -16,7 +16,7 @@
     description = "Timer for Dokument backup";
     wantedBy = [ "timers.target" ];
     timerConfig = {
-      OnnCalender = "04:00:00";
+      OnCalender = "04:00:00";
       Persistent = true;
     };
   };
