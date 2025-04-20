@@ -256,8 +256,8 @@
         "desktop-archlinux" = { id = "DEVU2F6OP4-NGOV7GX-MN7B7OL-JQRXOEX-RDXS2GB-BMG3YLV-6IYXHB4-J4PFCAR"; };
       };
       folders = {
-        "Dokument" = {
-          path = "/home/jt/Dokument";
+        "/home/jt/Dokument" = {
+          id = "Dokument";
           devices = [ "nix-n3" "desktop-archlinux" ];
         };
       };
