@@ -20,4 +20,18 @@
       Persistent = true;
     };
   };
+
+  # Sanoid for zfs snapshots
+  services.sanoid = {
+    enable = true;
+    templates.backup = {
+      daily = 30;
+      monthly = 6;
+      autoprune = true;
+      autosnap = true;
+    };
+    datasets."tank/backups" = {
+      useTemplate = [ "backup" ];
+    };
+  };
 }
