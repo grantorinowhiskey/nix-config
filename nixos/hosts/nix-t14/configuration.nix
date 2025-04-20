@@ -251,7 +251,7 @@
     overrideFolders = true;     # overrides any folders added or deleted through the WebUI
     settings = {
       devices = {
-        "pi" = { id = "EAY7MGV-4T44M7A-FNLKHD7-2IUMJV5-LXSV57E-736GQ6N-WJS2XOI-FQDUVQH"; };
+        "nix-n3" = { id = "JJEWJLR-NCTFT23-TVFKJN2-7ZPO67M-2IRXVKQ-FGUST4P-AMTTZ5Y-N7J7OA4"; };
         "desktop-archlinux" = { id = "DEVU2F6OP4-NGOV7GX-MN7B7OL-JQRXOEX-RDXS2GB-BMG3YLV-6IYXHB4-J4PFCAR"; };
         };
       };    
