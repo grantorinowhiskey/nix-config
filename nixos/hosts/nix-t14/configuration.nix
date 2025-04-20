@@ -257,7 +257,7 @@
       };
       folders = {
         "Dokument" = {
-          path = "/home/jt/Dokument";
+          path = "/home/jt/Dokument/";
           devices = [ "nix-n3" "desktop-archlinux" ];
         };
       };

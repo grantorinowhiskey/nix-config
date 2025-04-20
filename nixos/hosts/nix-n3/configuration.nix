@@ -212,7 +212,7 @@
       folders = {
         "Dokument" = {
           path = "/home/jt/appdata/syncthing/config/Dokument";
-          devices = [ "nix-14" "desktop-archlinux" ];
+          devices = [ "nix-t14" "desktop-archlinux" ];
         };
       };      
     };    
