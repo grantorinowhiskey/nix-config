@@ -12,7 +12,7 @@
   };
 
   # Timer to run backup script periodically
-  system.timers.dokument-backup = {
+  systemd.timers.dokument-backup = {
     description = "Timer for Dokument backup";
     wantedBy = [ "timers.target" ];
     timerConfig = {
