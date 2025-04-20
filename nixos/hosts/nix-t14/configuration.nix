@@ -244,6 +244,7 @@
   # Syncthing, https://nixos.wiki/wiki/Syncthing
   services.syncthing = { 
     enable = true;
+    openDefaultPorts = true;
     user = "jt";
     dataDir = "/home/jt/";    # Default folder for new synced folders
     configDir = "/home/jt/.config/syncthing";   # Folder for Syncthing's settings and keys
