@@ -103,6 +103,7 @@
     lazygit
     lm_sensors
     micro
+    restic
     svtplay-dl
     wget
     yazi
