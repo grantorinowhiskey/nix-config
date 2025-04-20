@@ -7,7 +7,7 @@
     serviceConfig = {
       Type = "oneshot";
       User = "jt";
-      ExecStart = "${pkgs.rsync}/bin/rsync -avz --delete /home/jt/appdata/syncthing/data/Dokument /tank/backups/Dokument";  
+      ExecStart = "${pkgs.rsync}/bin/rsync -avz --delete /home/jt/appdata/syncthing/data/Dokument/ /tank/backups/Dokument/";  
     };
   };
 
