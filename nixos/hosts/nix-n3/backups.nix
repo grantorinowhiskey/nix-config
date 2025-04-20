@@ -19,5 +19,6 @@
       OnCalender = "04:00:00";
       Persistent = true;
     };
+    enable = true;
   };
 }
