@@ -203,18 +203,12 @@
     dataDir = "/home/jt/appdata/syncthing/data";    # Default folder for new synced folders
     configDir = "/home/jt/appdata/syncthing/config";   # Folder for Syncthing's settings and keys
     overrideDevices = true;     # overrides any devices added or deleted through the WebUI
-    overrideFolders = true;     # overrides any folders added or deleted through the WebUI
+    overrideFolders = false;     # overrides any folders added or deleted through the WebUI
     settings = {
       devices = {
         "desktop-archlinux" = { id = "DEVU2F6OP4-NGOV7GX-MN7B7OL-JQRXOEX-RDXS2GB-BMG3YLV-6IYXHB4-J4PFCAR"; };
         "nix-t14" = { id = "YKHASS6-6PSNFQA-WFW7HEW-2FNNQF7-3RSJW5Y-44HTDIR-37BTQMU-C3SJGQZ"; };
       };
-      folders = {
-        "Dokument" = {
-          path = "/home/jt/appdata/syncthing/config/Dokument";
-          devices = [ "nix-t14" "desktop-archlinux" ];
-        };
-      };      
     };    
   };  
 
