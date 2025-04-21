@@ -253,7 +253,7 @@
     settings = {
       devices = {
         "nix-n3" = { id = "JJEWJLR-NCTFT23-TVFKJN2-7ZPO67M-2IRXVKQ-FGUST4P-AMTTZ5Y-N7J7OA4"; };
-        "desktop-archlinux" = { id = "DEVU2F6OP4-NGOV7GX-MN7B7OL-JQRXOEX-RDXS2GB-BMG3YLV-6IYXHB4-J4PFCAR"; };
+        "desktop-archlinux" = { id = "U2F6OP4-NGOV7GX-MN7B7OL-JQRXOEX-RDXS2GB-BMG3YLV-6IYXHB4-J4PFCAR"; };
       };
     };    
   };
