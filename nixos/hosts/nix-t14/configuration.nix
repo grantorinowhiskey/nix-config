@@ -158,7 +158,6 @@
    onlyoffice-bin_latest
    papirus-icon-theme
    ptyxis
-   quickemu
    resources
    sops
    spotify
