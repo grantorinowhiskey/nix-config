@@ -119,7 +119,7 @@
    boxbuddy
    brave
    buffer
-   clapper
+   celluloid
    curl
    discord
    disko
@@ -149,6 +149,7 @@
    morewaita-icon-theme
    mullvad-closest
    mullvad-vpn 
+   mpv
    nerdfonts
    nh
    nixd 
