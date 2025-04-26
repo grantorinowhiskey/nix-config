@@ -138,7 +138,7 @@
    hugo
    impression
    intel-gpu-tools
-   inter 
+   inter
    jellyfin-media-player
    lazydocker
    lazygit
@@ -148,14 +148,14 @@
    mission-center
    morewaita-icon-theme
    mullvad-closest
-   mullvad-vpn 
+   mullvad-vpn
    mpv
    nerdfonts
    nh
-   nixd 
+   nixd
    nixos-generators
    nixos-shell
-   obsidian 
+   obsidian
    onlyoffice-bin_latest
    papirus-icon-theme
    ptyxis
@@ -166,13 +166,12 @@
    starship
    svtplay-dl
    tealdeer
-   vaults 
+   vaults
    ventoy-full
    virt-manager
    vscodium # see below for extensions
    wget
    yazi
-   yt-dlp
    yubioath-flutter
    zellij
 
@@ -188,8 +187,9 @@
      })
 
   # unstable packages
-  nixpkgs-unstable.zed-editor
   nixpkgs-unstable.ghostty
+  nixpkgs-unstable.yt-dlp
+  nixpkgs-unstable.zed-editor
   ];
 
   # nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ]; # Recommended for nixd language server. Disabled for now, don't understand.
@@ -242,7 +242,7 @@
   services.mullvad-vpn.enable = true;
 
   # Syncthing, https://nixos.wiki/wiki/Syncthing
-  services.syncthing = { 
+  services.syncthing = {
     enable = true;
     openDefaultPorts = true;
     user = "jt";
@@ -255,7 +255,7 @@
         "nix-n3" = { id = "JJEWJLR-NCTFT23-TVFKJN2-7ZPO67M-2IRXVKQ-FGUST4P-AMTTZ5Y-N7J7OA4"; };
         "desktop-archlinux" = { id = "U2F6OP4-NGOV7GX-MN7B7OL-JQRXOEX-RDXS2GB-BMG3YLV-6IYXHB4-J4PFCAR"; };
       };
-    };    
+    };
   };
 
   # Firewall
