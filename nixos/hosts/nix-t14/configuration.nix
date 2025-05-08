@@ -192,6 +192,13 @@
   nixpkgs-unstable.zed-editor
   ];
 
+  # neovim
+  programs.neovim = {
+    enable = true;
+    viAlias = true;
+    vimAlias = true;
+  };
+
   # nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ]; # Recommended for nixd language server. Disabled for now, don't understand.
 
   # List services that you want to enable:
