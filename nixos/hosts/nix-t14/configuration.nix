@@ -155,7 +155,7 @@
    nixd
    nixos-generators
    nixos-shell
-   obsidian
+   
    onlyoffice-bin_latest
    papirus-icon-theme
    ptyxis
@@ -190,6 +190,7 @@
   nixpkgs-unstable.ghostty
   nixpkgs-unstable.yt-dlp
   nixpkgs-unstable.zed-editor
+  nixpkgs-unstable.obsidian
   ];
 
   # neovim
