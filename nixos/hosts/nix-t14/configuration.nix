@@ -159,7 +159,6 @@
    papirus-icon-theme
    ptyxis
    quickemu
-   quickget
    quickgui
    resources
    sops
