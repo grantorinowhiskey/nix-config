@@ -147,18 +147,20 @@
    micro
    mission-center
    morewaita-icon-theme
+   mpv
    mullvad-closest
    mullvad-vpn
-   mpv
    nerdfonts
    nh
    nixd
    nixos-generators
    nixos-shell
-   
    onlyoffice-bin_latest
    papirus-icon-theme
    ptyxis
+   quickemu
+   quickget
+   quickgui
    resources
    sops
    spotify
