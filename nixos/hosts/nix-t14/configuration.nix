@@ -167,7 +167,6 @@
    svtplay-dl
    tealdeer
    vaults
-   ventoy-full
    virt-manager
    vscodium # see below for extensions
    wget
