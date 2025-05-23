@@ -150,7 +150,6 @@
    mpv
    mullvad-closest
    mullvad-vpn
-   nerdfonts
    nh
    nixd
    nixos-generators
