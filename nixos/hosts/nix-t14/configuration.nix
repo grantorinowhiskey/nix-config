@@ -192,6 +192,14 @@
   nixpkgs-unstable.obsidian
   ];
 
+  # fonts
+  fonts.packages = with pkgs; [
+  	nerd-fonts.fira-code
+  	nerd-fonts.fira-mono
+  	nerd-fonts.roboto-mono
+  	nerd-fonts.hack
+  ];
+
   # neovim
   programs.neovim = {
     enable = true;
