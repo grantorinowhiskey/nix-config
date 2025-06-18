@@ -22,7 +22,7 @@
    gnomeExtensions.caffeine
    gnomeExtensions.middle-click-to-close-in-overview
    gnomeExtensions.mullvad-indicator
-   gnomeExtensions.night-light-slider
+   gnomeExtensions.battery-health-charging
    gnomeExtensions.tailscale-qs
    gnome-tweaks
   ];
