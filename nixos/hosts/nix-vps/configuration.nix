@@ -52,5 +52,5 @@
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM8OBmgPxRcvVdjXjXc+XGfVY2/zE1pqYM1VHkIqVOGf jt@nixos-t14"
   ];
 
-  system.stateVersion = "24.11";
+  system.stateVersion = "25.05";
 }
