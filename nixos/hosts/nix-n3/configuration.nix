@@ -27,7 +27,6 @@
   networking.hostName = "nix-n3";
   networking.hostId = "7fc991b6";
   networking.networkmanager.enable = true;
-  networking.nameservers = [ "1.1.1.1" "9.9.9.9" ];
 
   # hardware accelerated video
   nixpkgs.config.packageOverrides = pkgs: {
@@ -196,7 +195,7 @@
   services.tailscale.enable = true;
 
   # Syncthing
-  services.syncthing = { 
+  services.syncthing = {
     enable = true;
     openDefaultPorts = true;
     guiAddress = "0.0.0.0:8384";
@@ -210,8 +209,8 @@
         "desktop-archlinux" = { id = "U2F6OP4-NGOV7GX-MN7B7OL-JQRXOEX-RDXS2GB-BMG3YLV-6IYXHB4-J4PFCAR"; };
         "nix-t14" = { id = "YKHASS6-6PSNFQA-WFW7HEW-2FNNQF7-3RSJW5Y-44HTDIR-37BTQMU-C3SJGQZ"; };
       };
-    };    
-  };  
+    };
+  };
 
   # firwall
   networking.firewall.allowedTCPPorts = [ 80 81 443 8384 8443 8080 45876 ];
