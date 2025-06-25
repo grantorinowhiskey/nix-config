@@ -41,6 +41,13 @@
   # Configure console keymap
   console.keyMap = "sv-latin1";
 
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
+  # Flake support and nix commandand-line tool
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  # Packages
   environment.systemPackages = with pkgs; [
     aria2
     bat
