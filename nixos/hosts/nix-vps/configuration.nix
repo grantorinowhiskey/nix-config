@@ -14,7 +14,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # hostname
-  networking.hostName = "nix-t14";
+  networking.hostName = "nix-vps";
 
   # Enable networking
   networking.networkmanager.enable = true;
