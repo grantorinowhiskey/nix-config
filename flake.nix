@@ -43,7 +43,7 @@
           ./nixos/hosts/nix-n3/hardware-configuration.nix
           sops-nix.nixosModules.sops
           {
-            
+
             sops = {
               defaultSopsFile = ./secrets/secrets.yaml;
               age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
@@ -59,6 +59,7 @@
         modules = [
           disko.nixosModules.disko
           ./nixos/hosts/nix-vps/configuration.nix
+          sops-nix.nixosModules.sops
         ];
       };
     };
