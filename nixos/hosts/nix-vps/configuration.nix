@@ -85,6 +85,11 @@
     ];
   };
 
+  # Environment variable for text editor
+  environment.variables = {
+    EDITOR = "micro";
+  };
+
   # Workaround to get fish as the default interactive shell, and still using bash
   # as the system-shell
   programs.bash = {
@@ -128,7 +133,10 @@
   };
 
   # services
+  services. tailscale = {
+    enable = true;
 
+  };
 
   # firewall
   networking.firewall = {
