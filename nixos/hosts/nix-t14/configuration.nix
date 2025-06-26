@@ -127,7 +127,7 @@
    element-desktop
    fastfetch
    ffmpeg-full
-   fish
+   # fish # Trying out with home-manager
    fragments
    fzf
    git
@@ -280,32 +280,32 @@
     allowedUDPPorts = [ 53317 ]; # Opened for localsend
   };
 
-  # Workaround to get fish as the default interactive shell, and still using bash
+  # Workaround to get fish as the default interactive shell, and still using bash # Trying out with home-manager
   # as the system-shell
-  programs.bash = {
-    interactiveShellInit = ''
-      if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
-      then
-        shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
-        exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
-      fi
-    '';
-  };
+  # programs.bash = {
+  #   interactiveShellInit = ''
+  #     if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
+  #     then
+  #       shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
+  #       exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
+  #     fi
+  #   '';
+  # };
 
-  programs.fish = {
-    enable = true;
-    shellAliases = {
-      man = "batman";
-      cat = "bat --paging=never";
-    };
-  };
+  # programs.fish = {
+  #   enable = true;
+  #   shellAliases = {
+  #     man = "batman";
+  #     cat = "bat --paging=never";
+  #   };
+  # };
 
-  programs.starship = {
-    enable = true;
-    settings = {
-      nix_shell.heuristic = true; # Provides a nix shell prompt in nix shell
-    };
-  };
+  # programs.starship = {
+  #   enable = true;
+  #   settings = {
+  #     nix_shell.heuristic = true; # Provides a nix shell prompt in nix shell
+  #   };
+  # };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
