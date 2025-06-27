@@ -170,6 +170,7 @@
    virt-manager
    vscodium # see below for extensions
    wget
+   wl-copy
    yazi
    yubioath-flutter
    zellij
