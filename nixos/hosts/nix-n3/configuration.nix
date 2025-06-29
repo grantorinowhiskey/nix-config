@@ -61,6 +61,11 @@
     extraGroups = [ "wheel" "multimedia" "docker" "libvirtd" ];
   };
 
+  # User for backups
+  users.users.backups = {
+    isNormalUser = true;
+  };
+
   users.groups.multimedia = {};
 
   # sudo
