@@ -55,7 +55,7 @@
       rsync -az --delete \
         -e "ssh -i /home/backups/.ssh/id_ed25519" \
         /home/backups/rsync-net/Dokument/ \
-        zh5530@zh5530.rsync.net:backups/Dokument/
+        zh5530@zh5530.rsync.net:backups/
 
       # Avmontera
       fusermount -u /home/backups/rsync-net/Dokument
