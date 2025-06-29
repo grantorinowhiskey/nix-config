@@ -7,7 +7,7 @@
     serviceConfig = {
       Type = "oneshot";
       User = "jt";
-      ExecStart = "${pkgs.rsync}/bin/rsync -avz --delete /home/jt/appdata/syncthing/data/Dokument/ /tank/backups/Dokument/";  
+      ExecStart = "${pkgs.rsync}/bin/rsync -avz --delete /home/jt/appdata/syncthing/data/Dokument/ /tank/backups/Dokument/";
     };
   };
 
@@ -20,6 +20,22 @@
       Persistent = true;
     };
   };
+
+  # systemd-service to backup documents to rsync.net
+  systemd.services.dokument-remote-backup = {
+    description = "Upload Dokument backup to rsync.net";
+    serviceConfig = {
+      Type = "oneshot";
+      User = "backups";
+      ExecStart = ''
+        ${pkgs.rsync}/bin/rsync -az --delete \
+          -e "ssh -i /home/backups/.ssh/id_ed25519" \
+          /tank/backups/Dokument/ \
+          zh5530@zh5530.rsync.net:backups/Dokument/
+      '';
+    };
+  };
+
 
   # Sanoid for zfs snapshots
   services.sanoid = {
