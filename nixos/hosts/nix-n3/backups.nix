@@ -1,9 +1,9 @@
-{ config, pkgs, lib, ...}:
+{ config, pkgs, lib, ... }:
 
 {
-  # systemd-service for backup
+  #### 📁 Lokal backup från Syncthing till ZFS
   systemd.services.dokument-backup = {
-    description = "Backup Syncthing Documents";
+    description = "Backup Syncthing Documents till ZFS";
     serviceConfig = {
       Type = "oneshot";
       User = "jt";
@@ -11,17 +11,16 @@
     };
   };
 
-  # Timer to run backup script periodically
   systemd.timers.dokument-backup = {
-    description = "Timer for Dokument backup";
+    description = "Timer för lokal Dokument-backup";
     wantedBy = [ "timers.target" ];
     timerConfig = {
-      OnCalendar = "04:00:00";
+      OnCalendar = "04:00";
       Persistent = true;
     };
   };
 
-  #### 🛡️ Krypterat lösenord via sops-nix
+  #### 🔐 Gocryptfs-lösenord via sops
   sops.secrets.Dokument-backup-gocryptfs = {
     owner = "backups";
     group = "users";
@@ -29,50 +28,50 @@
     path = "/home/backups/.gocryptfs-pass";
   };
 
-  #### 🔁 Systemd-tjänst för gocryptfs + rsync
-    systemd.services.rsyncnet-backup = {
-      description = "Kryptera backup med gocryptfs och skicka till rsync.net";
-      after = [ "network-online.target" ];
-      wants = [ "network-online.target" ];
-      serviceConfig = {
-        Type = "oneshot";
-        User = "backups";
-        Environment = "PATH=${lib.makeBinPath [ pkgs.gocryptfs pkgs.rsync pkgs.openssh pkgs.fuse ]}";
-        ExecStart = ''
-          set -euxo pipefail
-
-          mkdir -p /home/backups/rsync-net-cipher
-
-          # Mounta krypterad vy med lösenord från sops
-          gocryptfs -reverse \
-            -passfile /home/backups/.gocryptfs-pass \
-            /home/backups/rsync-net/Dokument \
-            /home/backups/rsync-net-cipher
-
-          # Synka till rsync.net med privat nyckel
-          rsync -az --delete \
-            -e "ssh -i /home/backups/.ssh/id_ed25519" \
-            /home/backups/rsync-net/Dokument \
-            zh5530@zh5530.rsync.net:backups/
-
-          # Avmontera krypterad vy
-          fusermount -u /home/backups/rsync-net/Dokument
-        '';
-      };
+  #### 🔁 Krypterad backup till rsync.net
+  systemd.services.rsyncnet-backup = {
+    description = "Kryptera backup med gocryptfs och skicka till rsync.net";
+    after = [ "network-online.target" ];
+    wants = [ "network-online.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      User = "backups";
+      Environment = "PATH=${lib.makeBinPath [ pkgs.gocryptfs pkgs.rsync pkgs.openssh pkgs.fuse ]}";
     };
 
-    #### ⏰ Timer för att köra tjänsten dagligen
-    systemd.timers.rsyncnet-backup = {
-      description = "Daglig rsync.net backup via gocryptfs";
-      wantedBy = [ "timers.target" ];
-      timerConfig = {
-        OnCalendar = "daily";
-        Persistent = true;
-      };
+    script = ''
+      set -euxo pipefail
+
+      # Förbered krypterad mountpunkt
+      mkdir -p /home/backups/rsync-net/Dokument
+
+      # Mounta krypterad vy direkt till målmappen
+      gocryptfs -reverse \
+        -passfile /home/backups/.gocryptfs-pass \
+        /tank/backups/Dokument \
+        /home/backups/rsync-net/Dokument
+
+      # Rsync krypterad vy
+      rsync -az --delete \
+        -e "ssh -i /home/backups/.ssh/id_ed25519" \
+        /home/backups/rsync-net/Dokument/ \
+        zh5530@zh5530.rsync.net:backups/Dokument/
+
+      # Avmontera
+      fusermount -u /home/backups/rsync-net/Dokument
+    '';
+  };
+
+  systemd.timers.rsyncnet-backup = {
+    description = "Daglig rsync.net-backup (krypterad)";
+    wantedBy = [ "timers.target" ];
+    timerConfig = {
+      OnCalendar = "daily";
+      Persistent = true;
     };
+  };
 
-
-  # Sanoid for zfs snapshots
+  #### 💾 Snapshot-hantering med Sanoid
   services.sanoid = {
     enable = true;
     templates.backup = {
