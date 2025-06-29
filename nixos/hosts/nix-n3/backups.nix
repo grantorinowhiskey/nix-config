@@ -28,46 +28,23 @@
     path = "/home/backups/.gocryptfs-pass";
   };
 
-  #### 🔁 Krypterad backup till rsync.net
-  systemd.services.rsyncnet-backup = {
-    description = "Kryptera backup med gocryptfs och skicka till rsync.net";
-    after = [ "network-online.target" ];
-    wants = [ "network-online.target" ];
+  systemd.services."Dokument-backup-rsync-net" = {
+    script = ''
+      #!/usr/bin/env bash
+
+      gocryptfs -reverse -passfile /home/backups/.gocryptfs-pass \
+      /tank/backups/Dokument \
+      /home/backups/rsync-net/Dokument &&
+
+      rsync -avH -delete /home/bakups/rsync-net/Dokument \
+      zh5530@zh5530.rsync.net:backups/ &&
+
+      fusermount -u /home/backups/rsync-net/Dokument
+    '';
     serviceConfig = {
       Type = "oneshot";
       User = "backups";
-      Environment = "PATH=${lib.makeBinPath [ pkgs.gocryptfs pkgs.rsync pkgs.openssh pkgs.fuse ]}";
-    };
-
-    script = ''
-      set -euxo pipefail
-
-      # Förbered krypterad mountpunkt
-      mkdir -p /home/backups/rsync-net/Dokument
-
-      # Mounta krypterad vy direkt till målmappen
-      gocryptfs -reverse \
-        -passfile /home/backups/.gocryptfs-pass \
-        /tank/backups/Dokument \
-        /home/backups/rsync-net/Dokument
-
-      # Rsync krypterad vy
-      rsync -az --delete \
-        -e "ssh -i /home/backups/.ssh/id_ed25519" \
-        /home/backups/rsync-net/Dokument/ \
-        zh5530@zh5530.rsync.net:backups/
-
-      # Avmontera
-      fusermount -u /home/backups/rsync-net/Dokument
-    '';
-  };
-
-  systemd.timers.rsyncnet-backup = {
-    description = "Daglig rsync.net-backup (krypterad)";
-    wantedBy = [ "timers.target" ];
-    timerConfig = {
-      OnCalendar = "daily";
-      Persistent = true;
+      RemainAfterExit = true;
     };
   };
 
