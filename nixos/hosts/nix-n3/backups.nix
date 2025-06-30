@@ -29,6 +29,7 @@
   };
 
   systemd.services."Dokument-backup-rsync-net" = {
+    path = with pkgs; [ gocryptfs rsync openssh fuse];
     script = ''
       #!/usr/bin/env bash
 
@@ -36,7 +37,8 @@
       /tank/backups/Dokument \
       /home/backups/rsync-net/Dokument &&
 
-      rsync -avH -delete /home/bakups/rsync-net/Dokument \
+      rsync -avH -delete -e "ssh i /home/backups/.ssh/id_ed25519" \
+      /home/backups/rsync-net/Dokument \
       zh5530@zh5530.rsync.net:backups/ &&
 
       fusermount -u /home/backups/rsync-net/Dokument
