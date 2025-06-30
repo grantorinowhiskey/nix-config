@@ -162,6 +162,7 @@
    resources
    sops
    spotify
+   sshfs
    ssh-to-age
    starship
    svtplay-dl
