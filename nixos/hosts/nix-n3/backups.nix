@@ -47,6 +47,9 @@
       Type = "oneshot";
       User = "backups";
       RemainAfterExit = true;
+      # for fuse mounts:
+      PrivateDevices = false;
+      NoNewPrivileges = false;
     };
   };
 
