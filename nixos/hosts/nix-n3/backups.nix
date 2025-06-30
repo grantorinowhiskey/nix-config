@@ -48,8 +48,7 @@
       User = "backups";
       RemainAfterExit = true;
       # for fuse mounts:
-      PrivateDevices = false;
-      NoNewPrivileges = false;
+      DeviceAllow = "/dev/fuse rw";
     };
   };
 
