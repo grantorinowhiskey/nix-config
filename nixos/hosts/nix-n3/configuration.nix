@@ -64,6 +64,7 @@
   # User for backups
   users.users.backups = {
     isNormalUser = true;
+    extraGroups = [ "fuse" ];
   };
 
   users.groups.multimedia = {};
