@@ -250,6 +250,9 @@
   # tailscale
   services.tailscale.enable = true;
 
+  # davfs2, to mount taildrive shares
+  services.davfs2.enable = true;
+
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
