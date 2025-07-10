@@ -92,9 +92,9 @@
   };
 
   # Environment variable for text editor
-  environment.variables = {
-    EDITOR = "micro";
-  };
+  # environment.variables = {
+  #   EDITOR = "micro";
+  # };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -145,7 +145,7 @@
    lm_sensors
    localsend
    logseq
-   micro
+   # micro
    mission-center
    morewaita-icon-theme
    mpv
