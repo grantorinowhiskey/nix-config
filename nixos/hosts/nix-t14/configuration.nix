@@ -107,13 +107,13 @@
    alejandra
    amberol
    aria2
-   bat
-   bat-extras.batdiff
-   bat-extras.batgrep
-   bat-extras.batman
-   bat-extras.batpipe
-   bat-extras.batwatch
-   bat-extras.prettybat
+   # bat
+   # bat-extras.batdiff
+   # bat-extras.batgrep
+   # bat-extras.batman
+   # bat-extras.batpipe
+   # bat-extras.batwatch
+   # bat-extras.prettybat
    bitwarden-cli
    bottom
    boxbuddy
