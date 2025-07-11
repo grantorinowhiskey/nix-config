@@ -173,7 +173,7 @@
    vscodium # see below for extensions
    wget
    wl-clipboard-rs
-   yazi
+   # yazi
    yubioath-flutter
    zellij
 
