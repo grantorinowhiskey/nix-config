@@ -256,22 +256,23 @@
   # Mullvad
   services.mullvad-vpn.enable = true;
 
+  # Disabled syncthing to not conflict with livesync.
   # Syncthing, https://nixos.wiki/wiki/Syncthing
-  services.syncthing = {
-    enable = true;
-    openDefaultPorts = true;
-    user = "jt";
-    dataDir = "/home/jt/";    # Default folder for new synced folders
-    configDir = "/home/jt/.config/syncthing";   # Folder for Syncthing's settings and keys
-    overrideDevices = true;     # overrides any devices added or deleted through the WebUI
-    overrideFolders = false;     # overrides any folders added or deleted through the WebUI
-    settings = {
-      devices = {
-        "nix-n3" = { id = "JJEWJLR-NCTFT23-TVFKJN2-7ZPO67M-2IRXVKQ-FGUST4P-AMTTZ5Y-N7J7OA4"; };
-        "desktop-archlinux" = { id = "U2F6OP4-NGOV7GX-MN7B7OL-JQRXOEX-RDXS2GB-BMG3YLV-6IYXHB4-J4PFCAR"; };
-      };
-    };
-  };
+  # services.syncthing = {
+  #   enable = true;
+  #   openDefaultPorts = true;
+  #   user = "jt";
+  #   dataDir = "/home/jt/";    # Default folder for new synced folders
+  #   configDir = "/home/jt/.config/syncthing";   # Folder for Syncthing's settings and keys
+  #   overrideDevices = true;     # overrides any devices added or deleted through the WebUI
+  #   overrideFolders = false;     # overrides any folders added or deleted through the WebUI
+  #   settings = {
+  #     devices = {
+  #       "nix-n3" = { id = "JJEWJLR-NCTFT23-TVFKJN2-7ZPO67M-2IRXVKQ-FGUST4P-AMTTZ5Y-N7J7OA4"; };
+  #       "desktop-archlinux" = { id = "U2F6OP4-NGOV7GX-MN7B7OL-JQRXOEX-RDXS2GB-BMG3YLV-6IYXHB4-J4PFCAR"; };
+  #     };
+  #   };
+  # };
 
   # Firewall
   networking.firewall = {
