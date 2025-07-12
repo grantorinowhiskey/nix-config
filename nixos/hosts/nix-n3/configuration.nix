@@ -144,12 +144,6 @@
 
   # List services that you want to enable:
 
-  # Code server
-  services.code-server = {
-    enable = true;
-    disableTelemetry = true;
-  };
-
   # docker
   virtualisation = {
     docker = {
@@ -200,23 +194,23 @@
   # tailscale
   services.tailscale.enable = true;
 
-  # Syncthing
-  services.syncthing = {
-    enable = true;
-    openDefaultPorts = true;
-    guiAddress = "0.0.0.0:8384";
-    user = "jt";
-    dataDir = "/home/jt/appdata/syncthing/data";    # Default folder for new synced folders
-    configDir = "/home/jt/appdata/syncthing/config";   # Folder for Syncthing's settings and keys
-    overrideDevices = true;     # overrides any devices added or deleted through the WebUI
-    overrideFolders = false;     # overrides any folders added or deleted through the WebUI
-    settings = {
-      devices = {
-        "desktop-archlinux" = { id = "U2F6OP4-NGOV7GX-MN7B7OL-JQRXOEX-RDXS2GB-BMG3YLV-6IYXHB4-J4PFCAR"; };
-        "nix-t14" = { id = "YKHASS6-6PSNFQA-WFW7HEW-2FNNQF7-3RSJW5Y-44HTDIR-37BTQMU-C3SJGQZ"; };
-      };
-    };
-  };
+  # # Syncthing
+  # services.syncthing = {
+  #   enable = true;
+  #   openDefaultPorts = true;
+  #   guiAddress = "0.0.0.0:8384";
+  #   user = "jt";
+  #   dataDir = "/home/jt/appdata/syncthing/data";    # Default folder for new synced folders
+  #   configDir = "/home/jt/appdata/syncthing/config";   # Folder for Syncthing's settings and keys
+  #   overrideDevices = true;     # overrides any devices added or deleted through the WebUI
+  #   overrideFolders = false;     # overrides any folders added or deleted through the WebUI
+  #   settings = {
+  #     devices = {
+  #       "desktop-archlinux" = { id = "U2F6OP4-NGOV7GX-MN7B7OL-JQRXOEX-RDXS2GB-BMG3YLV-6IYXHB4-J4PFCAR"; };
+  #       "nix-t14" = { id = "YKHASS6-6PSNFQA-WFW7HEW-2FNNQF7-3RSJW5Y-44HTDIR-37BTQMU-C3SJGQZ"; };
+  #     };
+  #   };
+  # };
 
   # firwall
   networking.firewall.allowedTCPPorts = [ 80 81 443 8384 8443 8080 45876 ];
