@@ -84,36 +84,37 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    alejandra
-    aria2
+    # alejandra
+    # aria2
     bashmount
-    bat
-    bat-extras.batdiff
-    bat-extras.batgrep
-    bat-extras.batman
-    bat-extras.batpipe
-    bat-extras.batwatch
-    bat-extras.prettybat
-    bottom
+    # bat
+    # bat-extras.batdiff
+    # bat-extras.batgrep
+    # bat-extras.batman
+    # bat-extras.batpipe
+    # bat-extras.batwatch
+    # bat-extras.prettybat
+    # bottom
     curl
-    fastfetch
+    # fastfetch
     fish
-    fzf
+    # fzf
     git
     gocryptfs
-    htop
+    home-manager
+    # htop
     intel-gpu-tools
     jellyfin-ffmpeg
-    lazydocker
-    lazygit
+    # lazydocker
+    # lazygit
     lm_sensors
-    micro
+    # micro
     restic
     svtplay-dl
     wget
-    yazi
+    # yazi
     nixpkgs-unstable.yt-dlp
-    zellij
+    # zellij
   ];
 
   # Workaround to get fish as the default interactive shell, and still using bash
