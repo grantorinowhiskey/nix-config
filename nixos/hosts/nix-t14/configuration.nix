@@ -193,6 +193,7 @@
   nixpkgs-unstable.yt-dlp
   nixpkgs-unstable.zed-editor
   nixpkgs-unstable.obsidian
+  nixpkgs-unstable.helix
   ];
 
   # fonts
