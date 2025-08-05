@@ -62,6 +62,14 @@
           sops-nix.nixosModules.sops
         ];
       };
+        nix-vps-hetzner = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          disko.nixosModules.disko
+          ./nixos/hosts/nix-vps/configuration.nix
+          sops-nix.nixosModules.sops
+        ];
+      };
     };
   };
 }
