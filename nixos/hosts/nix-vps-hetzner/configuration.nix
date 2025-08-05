@@ -32,5 +32,13 @@
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM8OBmgPxRcvVdjXjXc+XGfVY2/zE1pqYM1VHkIqVOGf jt@nixos-t14"
   ];
 
+  users.users.jt = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" ];
+    authorizedKeys.keys = [
+     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM8OBmgPxRcvVdjXjXc+XGfVY2/zE1pqYM1VHkIqVOGf jt@nixos-t14" 
+    ];
+  };
+
   system.stateVersion = "25.05";
 }
