@@ -49,9 +49,10 @@
   users.users.jt = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
-    authorizedKeys.keys = [
+    openssh.authorizedKeys.keys = [
      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM8OBmgPxRcvVdjXjXc+XGfVY2/zE1pqYM1VHkIqVOGf jt@nixos-t14" 
     ];
+    
   };
 
   # SSH-settings
