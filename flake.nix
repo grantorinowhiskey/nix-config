@@ -25,7 +25,7 @@
           ./nixos/hosts/nix-t14/configuration.nix
           ./nixos/modules/gnome.nix
           ./nixos/modules/gaming.nix
-          ./nixos/modules/niri.nix
+        #   ./nixos/modules/niri.nix
           sops-nix.nixosModules.sops
         ];
       };

@@ -136,6 +136,7 @@
    home-manager
    htop
    hugo
+   imagemagick
    impression
    intel-gpu-tools
    inter
