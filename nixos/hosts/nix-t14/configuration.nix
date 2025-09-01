@@ -243,7 +243,10 @@
   services.pcscd.enable = true;
 
   # tailscale
-  services.tailscale.enable = true;
+  services.tailscale = {
+    enable = true;
+    package = nixpkgs-unstable.tailscale;
+  };
 
   # davfs2, to mount taildrive shares
   services.davfs2.enable = true;
