@@ -193,8 +193,10 @@
   services.thermald.enable = true;
 
   # tailscale
-  services.tailscale.enable = true;
-
+  services.tailscale = {
+    enable = true;
+    package = nixpkgs-unstable.tailscale;
+  };
   # # Syncthing
   # services.syncthing = {
   #   enable = true;
