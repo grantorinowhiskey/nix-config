@@ -164,7 +164,7 @@
     nixd
     nixos-generators
     nixos-shell
-    onlyoffice-desktopeditors
+    # onlyoffice-desktopeditors
     papirus-icon-theme
     ptyxis
     quickemu
