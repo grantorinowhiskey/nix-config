@@ -148,7 +148,7 @@
     impression
     intel-gpu-tools
     inter
-    jellyfin-media-player
+    # jellyfin-media-player
     lazydocker
     lazygit
     lm_sensors
