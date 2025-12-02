@@ -5,10 +5,10 @@
 { pkgs, nixpkgs-unstable, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -49,17 +49,19 @@
 
   # Hardware accelerated video playback
   # nixpkgs.config.packageOverrides = pkgs: {
-      # intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
-    # };
-    hardware.graphics = {
-      enable = true;
-      extraPackages = with pkgs; [
-        intel-media-driver
-        intel-compute-runtime
-        vpl-gpu-rt
-      ];
-    };
-    environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; }; # Force intel-media-driver
+  # intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
+  # };
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver
+      intel-compute-runtime
+      vpl-gpu-rt
+    ];
+  };
+  environment.sessionVariables = {
+    LIBVA_DRIVER_NAME = "iHD";
+  }; # Force intel-media-driver
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
@@ -80,12 +82,15 @@
     };
   };
 
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.jt = {
     isNormalUser = true;
     description = "Jens";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "libvirtd"
+    ];
     packages = with pkgs; [
       firefox
     ];
@@ -100,110 +105,112 @@
   nixpkgs.config.allowUnfree = true;
 
   # Flake support and nix commandand-line tool
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Packages installed in system profile
   environment.systemPackages = with pkgs; [
-   alejandra
-   amberol
-   aria2
-   # bat
-   # bat-extras.batdiff
-   # bat-extras.batgrep
-   # bat-extras.batman
-   # bat-extras.batpipe
-   # bat-extras.batwatch
-   # bat-extras.prettybat
-   bitwarden-cli
-   bottom
-   boxbuddy
-   brave
-   buffer
-   celluloid
-   curl
-   discord
-   disko
-   distrobox
-   element-desktop
-   fastfetch
-   ffmpeg-full
-   # fish # Trying out with home-manager
-   fragments
-   fzf
-   git
-   gnupg1
-   gocryptfs
-   home-manager
-   htop
-   hugo
-   imagemagick
-   impression
-   intel-gpu-tools
-   inter
-   jellyfin-media-player
-   lazydocker
-   lazygit
-   lm_sensors
-   localsend
-   logseq
-   # micro
-   mission-center
-   morewaita-icon-theme
-   mpv
-   mullvad-closest
-   mullvad-vpn
-   nh
-   nixd
-   nixos-generators
-   nixos-shell
-   onlyoffice-desktopeditors
-   papirus-icon-theme
-   ptyxis
-   quickemu
-   quickgui
-   resources
-   sops
-   spotify
-   sshfs
-   ssh-to-age
-   starship
-   svtplay-dl
-   tealdeer
-   vaults
-   virt-manager
-   vscodium # see below for extensions
-   wget
-   wl-clipboard-rs
-   # yazi
-   yubioath-flutter
-   zellij
+    alejandra
+    amberol
+    aria2
+    # bat
+    # bat-extras.batdiff
+    # bat-extras.batgrep
+    # bat-extras.batman
+    # bat-extras.batpipe
+    # bat-extras.batwatch
+    # bat-extras.prettybat
+    bitwarden-cli
+    bottom
+    boxbuddy
+    brave
+    buffer
+    celluloid
+    curl
+    discord
+    disko
+    distrobox
+    element-desktop
+    fastfetch
+    ffmpeg-full
+    # fish # Trying out with home-manager
+    fragments
+    fzf
+    git
+    gnupg1
+    gocryptfs
+    home-manager
+    htop
+    hugo
+    imagemagick
+    impression
+    intel-gpu-tools
+    inter
+    jellyfin-media-player
+    lazydocker
+    lazygit
+    lm_sensors
+    # localsend
+    logseq
+    # micro
+    mission-center
+    morewaita-icon-theme
+    mpv
+    mullvad-closest
+    mullvad-vpn
+    nh
+    nixd
+    nixos-generators
+    nixos-shell
+    onlyoffice-desktopeditors
+    papirus-icon-theme
+    ptyxis
+    quickemu
+    quickgui
+    resources
+    sops
+    spotify
+    sshfs
+    ssh-to-age
+    starship
+    svtplay-dl
+    tealdeer
+    vaults
+    virt-manager
+    vscodium # see below for extensions
+    wget
+    wl-clipboard-rs
+    # yazi
+    yubioath-flutter
+    zellij
 
-   # vscodium extensions
-   (vscode-with-extensions.override {
-       vscode = vscodium;
-       vscodeExtensions = with vscode-extensions; [
-         jnoortheen.nix-ide
-         piousdeer.adwaita-theme
-         ms-vscode-remote.remote-ssh
-         ms-azuretools.vscode-docker
-       ];
-     })
+    # vscodium extensions
+    (vscode-with-extensions.override {
+      vscode = vscodium;
+      vscodeExtensions = with vscode-extensions; [
+        jnoortheen.nix-ide
+        piousdeer.adwaita-theme
+        ms-vscode-remote.remote-ssh
+        ms-azuretools.vscode-docker
+      ];
+    })
 
-  # unstable packages
-  nixpkgs-unstable.ghostty
-  nixpkgs-unstable.yt-dlp
-  nixpkgs-unstable.zed-editor
-  nixpkgs-unstable.obsidian
+    # unstable packages
+    nixpkgs-unstable.ghostty
+    nixpkgs-unstable.yt-dlp
+    nixpkgs-unstable.zed-editor
+    nixpkgs-unstable.obsidian
   ];
 
   # fonts
   fonts.packages = with pkgs; [
-  	nerd-fonts.fira-code
-  	nerd-fonts.fira-mono
-  	nerd-fonts.roboto-mono
-  	nerd-fonts.hack
+    nerd-fonts.fira-code
+    nerd-fonts.fira-mono
+    nerd-fonts.roboto-mono
+    nerd-fonts.hack
   ];
-
 
   # nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ]; # Recommended for nixd language server. Disabled for now, don't understand.
 
@@ -211,9 +218,9 @@
 
   # Automatic garbage collection, per recommendations from the wiki
   nix.gc = {
-  automatic = true;
-  dates = "weekly";
-  options = "--delete-older-than 30d";
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
   };
 
   services.auto-cpufreq = {
@@ -298,7 +305,6 @@
   };
 
   programs.fish.enable = true;
-
 
   # programs.starship = {
   #   enable = true;
