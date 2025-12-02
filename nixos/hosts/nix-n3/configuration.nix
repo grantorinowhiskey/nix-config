@@ -38,7 +38,7 @@
     extraPackages = with pkgs; [
       intel-media-driver
       intel-vaapi-driver # previously vaapiIntel
-      vaapiVdpau
+      libva-vdpau-driver # previously vaapiVdpau
       intel-compute-runtime # OpenCL filter support (hardware tonemapping and subtitle burn-in)
       vpl-gpu-rt # enables quicksync
     ];
