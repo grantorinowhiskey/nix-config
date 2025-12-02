@@ -168,7 +168,7 @@
     papirus-icon-theme
     ptyxis
     quickemu
-    quickgui
+    # quickgui
     resources
     sops
     spotify
