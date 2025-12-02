@@ -153,7 +153,7 @@
     lazygit
     lm_sensors
     # localsend
-    logseq
+    # logseq
     # micro
     mission-center
     morewaita-icon-theme
