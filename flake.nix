@@ -7,69 +7,80 @@
     sops-nix.url = "github:Mic92/sops-nix";
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
+    copypart.url = "github:9001/copyparty";
   };
 
-  outputs = { nixpkgs, nixpkgs-unstable, sops-nix, disko, ... }@inputs: {
-    nixosConfigurations = {
-      # Configuration for host nix-t14
-      nix-t14 = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {
-          nixpkgs-unstable = import nixpkgs-unstable {
-            system = "x86_64-linux";
-            config.allowUnfree = true;
-          };
-        };
-        modules = [
-          ./nixos/hosts/nix-t14/configuration.nix
-          ./nixos/modules/gnome.nix
-          ./nixos/modules/gaming.nix
-        #   ./nixos/modules/niri.nix
-          sops-nix.nixosModules.sops
-        ];
-      };
-
-      # Configuration for another host nix-server
-      nix-n3 = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {
-          nixpkgs-unstable = import nixpkgs-unstable {
-            system = "x86_64-linux";
-            config.allowUnfree = true;
-          };
-        };
-        modules = [
-          ./nixos/hosts/nix-n3/configuration.nix
-          ./nixos/hosts/nix-n3/hardware-configuration.nix
-          sops-nix.nixosModules.sops
-          {
-
-            sops = {
-              defaultSopsFile = ./secrets/secrets.yaml;
-              age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
-              secrets = {
-                "duckdns-token" = {};
-              };
+  outputs =
+    {
+      nixpkgs,
+      nixpkgs-unstable,
+      sops-nix,
+      disko,
+      copyparty,
+      ...
+    }@inputs:
+    {
+      nixosConfigurations = {
+        # Configuration for host nix-t14
+        nix-t14 = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = {
+            nixpkgs-unstable = import nixpkgs-unstable {
+              system = "x86_64-linux";
+              config.allowUnfree = true;
             };
-          }
-        ];
-      };
-      nix-vps = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          disko.nixosModules.disko
-          ./nixos/hosts/nix-vps/configuration.nix
-          sops-nix.nixosModules.sops
-        ];
-      };
+          };
+          modules = [
+            ./nixos/hosts/nix-t14/configuration.nix
+            ./nixos/modules/gnome.nix
+            ./nixos/modules/gaming.nix
+            #   ./nixos/modules/niri.nix
+            sops-nix.nixosModules.sops
+          ];
+        };
+
+        # Configuration for another host nix-server
+        nix-n3 = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = {
+            nixpkgs-unstable = import nixpkgs-unstable {
+              system = "x86_64-linux";
+              config.allowUnfree = true;
+            };
+          };
+          modules = [
+            ./nixos/hosts/nix-n3/configuration.nix
+            ./nixos/hosts/nix-n3/hardware-configuration.nix
+            sops-nix.nixosModules.sops
+            copyparty.nixosModules.default
+            {
+
+              sops = {
+                defaultSopsFile = ./secrets/secrets.yaml;
+                age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+                secrets = {
+                  "duckdns-token" = { };
+                };
+              };
+            }
+          ];
+        };
+        nix-vps = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            disko.nixosModules.disko
+            ./nixos/hosts/nix-vps/configuration.nix
+            sops-nix.nixosModules.sops
+          ];
+        };
         nix-vps-hetzner = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          disko.nixosModules.disko
-          ./nixos/hosts/nix-vps/configuration.nix
-          sops-nix.nixosModules.sops
-        ];
+          system = "x86_64-linux";
+          modules = [
+            disko.nixosModules.disko
+            ./nixos/hosts/nix-vps/configuration.nix
+            sops-nix.nixosModules.sops
+          ];
+        };
       };
     };
-  };
 }
