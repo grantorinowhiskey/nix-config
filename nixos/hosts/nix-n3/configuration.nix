@@ -25,7 +25,7 @@
 
   # networking
   networking.hostName = "nix-n3";
-  networking.hostId = "7fc991b6";
+  networking.hostId = "7fc991b6";´
   networking.networkmanager.enable = true;
 
   # hardware accelerated video
@@ -95,6 +95,7 @@
     # bat-extras.batwatch
     # bat-extras.prettybat
     # bottom
+    copyparty
     curl
     # fastfetch
     fish
