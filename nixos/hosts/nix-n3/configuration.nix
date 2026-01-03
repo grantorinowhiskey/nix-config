@@ -5,11 +5,11 @@
 { pkgs, nixpkgs-unstable, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./backups.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./backups.nix
+  ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -25,7 +25,7 @@
 
   # networking
   networking.hostName = "nix-n3";
-  networking.hostId = "7fc991b6";´
+  networking.hostId = "7fc991b6";
   networking.networkmanager.enable = true;
 
   # hardware accelerated video
@@ -33,7 +33,8 @@
     vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
   };
 
-  hardware.graphics = { # hardware.opengl in 24.05
+  hardware.graphics = {
+    # hardware.opengl in 24.05
     enable = true;
     extraPackages = with pkgs; [
       intel-media-driver
@@ -43,7 +44,9 @@
       vpl-gpu-rt # enables quicksync
     ];
   };
-  environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; }; # Force intel-media-driver
+  environment.sessionVariables = {
+    LIBVA_DRIVER_NAME = "iHD";
+  }; # Force intel-media-driver
 
   # Set your time zone.
   time.timeZone = "Europe/Stockholm";
@@ -51,14 +54,19 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "sv_SE.UTF-8";
   console = {
-  #   font = "Lat2-Terminus16";
+    #   font = "Lat2-Terminus16";
     keyMap = "sv-latin1";
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.jt = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "multimedia" "docker" "libvirtd" ];
+    extraGroups = [
+      "wheel"
+      "multimedia"
+      "docker"
+      "libvirtd"
+    ];
   };
 
   # User for backups
@@ -67,19 +75,22 @@
     extraGroups = [ "fuse" ];
   };
 
-  users.groups.multimedia = {};
+  users.groups.multimedia = { };
 
   # sudo
   security.sudo = {
-  	enable = true;
-  	wheelNeedsPassword = false;
+    enable = true;
+    wheelNeedsPassword = false;
   };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   # Flake support and nix commandand-line tool
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -162,18 +173,18 @@
 
   # Automatic garbage collection, per recommendations from the wiki
   nix.gc = {
-  automatic = true;
-  dates = "weekly";
-  options = "--delete-older-than 30d";
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
   };
 
   # SSH-settings
   services.openssh = {
-  	enable = true;
-  	settings = {
-  		PasswordAuthentication = false;
+    enable = true;
+    settings = {
+      PasswordAuthentication = false;
       PermitRootLogin = "yes";
-  	};
+    };
   };
 
   # Enabling firmware updates
@@ -217,8 +228,19 @@
   # };
 
   # firwall
-  networking.firewall.allowedTCPPorts = [ 80 81 443 8384 8443 8080 45876 ];
-  networking.firewall.allowedUDPPorts = [ 3478 10001 ];
+  networking.firewall.allowedTCPPorts = [
+    80
+    81
+    443
+    8384
+    8443
+    8080
+    45876
+  ];
+  networking.firewall.allowedUDPPorts = [
+    3478
+    10001
+  ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
