@@ -166,7 +166,6 @@
     nixos-shell
     # onlyoffice-desktopeditors
     papirus-icon-theme
-    ptyxis
     quickemu
     # quickgui
     resources
