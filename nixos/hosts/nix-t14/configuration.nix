@@ -212,6 +212,12 @@
     nerd-fonts.hack
   ];
 
+  # ghostty as default terminal
+  xdg.terminal-exec = {
+    enable = true;
+    settings.default = ["ghostty.desktop"];
+  };
+
   # nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ]; # Recommended for nixd language server. Disabled for now, don't understand.
 
   # List services that you want to enable:
