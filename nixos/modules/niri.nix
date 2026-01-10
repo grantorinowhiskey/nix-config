@@ -8,7 +8,7 @@
   services.gnome.gnome-keyring.enable = true; # secret service
   security.pam.services.swaylock = {};
 
-  programs.waybar.enable = true; # top bar
+  # programs.waybar.enable = true; # top bar - disabled because of double waybars
 
 
   environment.systemPackages = with pkgs; [
