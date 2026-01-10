@@ -129,7 +129,7 @@
     buffer
     celluloid
     curl
-    discord
+    # discord
     disko
     distrobox
     # element-desktop
@@ -177,6 +177,7 @@
     svtplay-dl
     tealdeer
     vaults
+    vesktop
     virt-manager
     vscodium # see below for extensions
     wget
