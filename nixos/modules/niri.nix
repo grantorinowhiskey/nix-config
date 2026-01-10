@@ -17,6 +17,7 @@
     swaylock
     mako
     swayidle
+    waybar
     ];
 
 
