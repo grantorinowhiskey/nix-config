@@ -16,8 +16,10 @@
     fuzzel
     swaylock
     mako
+    swaybg
     swayidle
     waybar
+    xwayland-satellite
     ];
 
 
