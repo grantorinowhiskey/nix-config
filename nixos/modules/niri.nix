@@ -20,6 +20,7 @@
     swaybg
     swayidle
     waybar
+    waypaper
     xwayland-satellite
     ];
 
