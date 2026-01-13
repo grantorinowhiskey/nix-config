@@ -132,7 +132,7 @@
     # discord
     disko
     distrobox
-    # element-desktop
+    element-desktop
     fastfetch
     ffmpeg-full
     # fish # Trying out with home-manager
