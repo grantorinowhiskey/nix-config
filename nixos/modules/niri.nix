@@ -13,6 +13,7 @@
 
   environment.systemPackages = with pkgs; [
     alacritty
+    adw-bluetooth
     brightnessctl
     fuzzel
     swaylock
