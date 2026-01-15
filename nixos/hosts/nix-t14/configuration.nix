@@ -218,6 +218,12 @@
     settings.default = ["ghostty.desktop"];
   };
 
+  # nautilus integration for ghostty
+  programs.nautilus-open-any-terminal = {
+    enable = true;
+    terminal = "ghostty";
+  };
+
   # nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ]; # Recommended for nixd language server. Disabled for now, don't understand.
 
   # List services that you want to enable:
