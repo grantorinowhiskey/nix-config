@@ -176,7 +176,6 @@
     starship
     svtplay-dl
     tealdeer
-    trayscale
     vaults
     vesktop
     virt-manager
