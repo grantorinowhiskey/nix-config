@@ -36,6 +36,11 @@
             ./nixos/modules/gaming.nix
             ./nixos/modules/niri.nix
             sops-nix.nixosModules.sops
+            {
+              sops = {
+                defaultSopsFile = ./secrets/secrets.yaml;
+              };
+            }
           ];
         };
 
