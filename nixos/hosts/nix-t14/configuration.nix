@@ -169,6 +169,7 @@
     quickemu
     # quickgui
     resources
+    sirikali
     sops
     spotify
     sshfs
@@ -215,7 +216,7 @@
   # ghostty as default terminal
   xdg.terminal-exec = {
     enable = true;
-    settings.default = ["ghostty.desktop"];
+    settings.default = [ "ghostty.desktop" ];
   };
 
   # nautilus integration for ghostty
