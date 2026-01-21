@@ -39,6 +39,7 @@
             {
               sops = {
                 defaultSopsFile = ./secrets/secrets.yaml;
+                age.keyFile = "/home/jt/.config/sops/age/keys.txt";
                 secrets = {
                   dokument-crypt = { };
                 };
