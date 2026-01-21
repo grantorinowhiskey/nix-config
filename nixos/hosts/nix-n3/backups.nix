@@ -1,32 +1,37 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   #### 📁 Lokal backup från Syncthing till ZFS
-  systemd.services.dokument-backup = {
-    description = "Backup Syncthing Documents till ZFS";
-    serviceConfig = {
-      Type = "oneshot";
-      User = "jt";
-      ExecStart = "${pkgs.rsync}/bin/rsync -avz --delete /home/jt/appdata/syncthing/data/Dokument/ /tank/backups/Dokument/";
-    };
-  };
+  # systemd.services.dokument-backup = {
+  #   description = "Backup Syncthing Documents till ZFS";
+  #   serviceConfig = {
+  #     Type = "oneshot";
+  #     User = "jt";
+  #     ExecStart = "${pkgs.rsync}/bin/rsync -avz --delete /home/jt/appdata/syncthing/data/Dokument/ /tank/backups/Dokument/";
+  #   };
+  # };
 
-  systemd.timers.dokument-backup = {
-    description = "Timer för lokal Dokument-backup";
-    wantedBy = [ "timers.target" ];
-    timerConfig = {
-      OnCalendar = "04:00";
-      Persistent = true;
-    };
-  };
+  # systemd.timers.dokument-backup = {
+  #   description = "Timer för lokal Dokument-backup";
+  #   wantedBy = [ "timers.target" ];
+  #   timerConfig = {
+  #     OnCalendar = "04:00";
+  #     Persistent = true;
+  #   };
+  # };
 
-  #### 🔐 Gocryptfs-lösenord via sops
-  sops.secrets.Dokument-backup-gocryptfs = {
-    owner = "backups";
-    group = "users";
-    mode = "0400";
-    path = "/home/backups/.gocryptfs-pass";
-  };
+  # #### 🔐 Gocryptfs-lösenord via sops
+  # sops.secrets.Dokument-backup-gocryptfs = {
+  #   owner = "backups";
+  #   group = "users";
+  #   mode = "0400";
+  #   path = "/home/backups/.gocryptfs-pass";
+  # };
 
   # systemd.services."Dokument-backup-rsync-net" = {
   #   path = with pkgs; [ gocryptfs rsync openssh fuse ];
