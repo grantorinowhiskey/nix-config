@@ -39,6 +39,9 @@
             {
               sops = {
                 defaultSopsFile = ./secrets/secrets.yaml;
+                secrets = {
+                  dokument-crypt = { };
+                };
               };
             }
           ];
