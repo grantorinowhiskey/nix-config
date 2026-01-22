@@ -169,7 +169,7 @@
     quickemu
     # quickgui
     resources
-    sirikali
+    # sirikali
     sops
     spotify
     sshfs
