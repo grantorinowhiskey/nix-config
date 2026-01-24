@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, nixpkgs-unstable, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -138,6 +138,7 @@
     # fish # Trying out with home-manager
     fragments
     fzf
+    ghostty
     git
     gnupg1
     gocryptfs
@@ -164,6 +165,7 @@
     nixd
     nixos-generators
     nixos-shell
+    obsidian
     # onlyoffice-desktopeditors
     papirus-icon-theme
     quickemu
@@ -185,6 +187,8 @@
     wl-clipboard-rs
     # yazi
     yubioath-flutter
+    yt-dlp
+    zed-editor
     zellij
 
     # vscodium extensions
@@ -199,10 +203,10 @@
     })
 
     # unstable packages
-    nixpkgs-unstable.ghostty
-    nixpkgs-unstable.yt-dlp
-    nixpkgs-unstable.zed-editor
-    nixpkgs-unstable.obsidian
+    # nixpkgs-unstable.ghostty
+    # nixpkgs-unstable.yt-dlp
+    # nixpkgs-unstable.zed-editor
+    # nixpkgs-unstable.obsidian
   ];
 
   # fonts
@@ -269,7 +273,7 @@
   # tailscale
   services.tailscale = {
     enable = true;
-    package = nixpkgs-unstable.tailscale;
+    # package = nixpkgs-unstable.tailscale;
   };
 
   # davfs2, to mount taildrive shares
