@@ -2,8 +2,8 @@
   description = "A simple NixOS flake with multiple hosts";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable"; # using nixos-unstable
+    # nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     sops-nix.url = "github:Mic92/sops-nix";
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
@@ -13,7 +13,7 @@
   outputs =
     {
       nixpkgs,
-      nixpkgs-unstable,
+      # nixpkgs-unstable,
       sops-nix,
       disko,
       copyparty,
@@ -24,11 +24,11 @@
         # Configuration for host nix-t14
         nix-t14 = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          specialArgs = {
-            nixpkgs-unstable = import nixpkgs-unstable {
-              system = "x86_64-linux";
-              config.allowUnfree = true;
-            };
+          # specialArgs = {
+          #   nixpkgs-unstable = import nixpkgs-unstable {
+          #     system = "x86_64-linux";
+          #     config.allowUnfree = true;
+          #   };
           };
           modules = [
             ./nixos/hosts/nix-t14/configuration.nix
@@ -53,11 +53,11 @@
         # Configuration for another host nix-server
         nix-n3 = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          specialArgs = {
-            nixpkgs-unstable = import nixpkgs-unstable {
-              system = "x86_64-linux";
-              config.allowUnfree = true;
-            };
+          # specialArgs = {
+          #   nixpkgs-unstable = import nixpkgs-unstable {
+          #     system = "x86_64-linux";
+          #     config.allowUnfree = true;
+          #   };
           };
           modules = [
             ./nixos/hosts/nix-n3/configuration.nix
