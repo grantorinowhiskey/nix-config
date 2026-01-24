@@ -2,7 +2,7 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ pkgs, nixpkgs-unstable, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -125,7 +125,7 @@
     svtplay-dl
     wget
     # yazi
-    nixpkgs-unstable.yt-dlp
+    yt-dlp
     # zellij
   ];
 
@@ -208,7 +208,7 @@
   # tailscale
   services.tailscale = {
     enable = true;
-    package = nixpkgs-unstable.tailscale;
+    # package = nixpkgs-unstable.tailscale;
   };
   # # Syncthing
   # services.syncthing = {
