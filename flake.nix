@@ -29,7 +29,7 @@
           #     system = "x86_64-linux";
           #     config.allowUnfree = true;
           #   };
-          };
+
           modules = [
             ./nixos/hosts/nix-t14/configuration.nix
             ./nixos/modules/gnome.nix
@@ -58,7 +58,7 @@
           #     system = "x86_64-linux";
           #     config.allowUnfree = true;
           #   };
-          };
+
           modules = [
             ./nixos/hosts/nix-n3/configuration.nix
             ./nixos/hosts/nix-n3/hardware-configuration.nix
