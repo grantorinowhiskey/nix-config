@@ -159,7 +159,6 @@
     mission-center
     morewaita-icon-theme
     mpv
-    mullvad-closest
     mullvad-vpn
     nh
     nixd
