@@ -112,9 +112,6 @@
 
   # Packages installed in system profile
   environment.systemPackages = with pkgs; [
-    alejandra
-    amberol
-    aria2
     # bat
     # bat-extras.batdiff
     # bat-extras.batgrep
@@ -122,6 +119,19 @@
     # bat-extras.batpipe
     # bat-extras.batwatch
     # bat-extras.prettybat
+    # discord
+    # fish # Trying out with home-manager
+    # jellyfin-media-player
+    # localsend
+    # logseq
+    # micro
+    # onlyoffice-desktopeditors
+    # quickgui
+    # sirikali
+    # yazi
+    alejandra
+    amberol
+    aria2
     bitwarden-cli
     bottom
     boxbuddy
@@ -129,13 +139,11 @@
     buffer
     celluloid
     curl
-    # discord
     disko
     distrobox
     element-desktop
     fastfetch
     ffmpeg-full
-    # fish # Trying out with home-manager
     fragments
     fzf
     ghostty
@@ -149,13 +157,9 @@
     impression
     intel-gpu-tools
     inter
-    # jellyfin-media-player
     lazydocker
     lazygit
     lm_sensors
-    # localsend
-    # logseq
-    # micro
     mission-center
     morewaita-icon-theme
     mpv
@@ -165,16 +169,14 @@
     nixos-generators
     nixos-shell
     obsidian
-    # onlyoffice-desktopeditors
     papirus-icon-theme
+    pywalfox-native
     quickemu
-    # quickgui
     resources
-    # sirikali
     sops
     spotify
-    sshfs
     ssh-to-age
+    sshfs
     starship
     svtplay-dl
     tealdeer
@@ -184,9 +186,8 @@
     vscodium # see below for extensions
     wget
     wl-clipboard-rs
-    # yazi
-    yubioath-flutter
     yt-dlp
+    yubioath-flutter
     zed-editor
     zellij
 
