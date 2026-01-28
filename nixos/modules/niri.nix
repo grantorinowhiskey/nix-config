@@ -26,7 +26,7 @@
     # swayidle
     # waybar
     # waypaper
-    # xwayland-satellite
+    xwayland-satellite
   ];
 
 }
