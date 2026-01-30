@@ -34,8 +34,11 @@
     volumes = {
       "/" = {
         path = "/mnt/copyparty";
-        r = "*";
-        rw = [ "jt" ];
+        access = {
+          r = "*";
+          rw = [ "jt" ];
+        };
+
       };
     };
     openFilesLimit = 8192;
