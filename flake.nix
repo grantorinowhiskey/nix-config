@@ -64,11 +64,14 @@
             ./nixos/hosts/nix-n3/hardware-configuration.nix
             copyparty.nixosModules.default
 
-            ({ ... }: {
-              nixpkgs.overlays = [
-                copyparty.overlays.default
-              ]:
-            })
+            (
+              { ... }:
+              {
+                nixpkgs.overlays = [
+                  copyparty.overlays.default
+                ];
+              }
+            )
 
             sops-nix.nixosModules.sops
 
