@@ -62,8 +62,16 @@
           modules = [
             ./nixos/hosts/nix-n3/configuration.nix
             ./nixos/hosts/nix-n3/hardware-configuration.nix
-            sops-nix.nixosModules.sops
             copyparty.nixosModules.default
+
+            ({ ... }: {
+              nixpkgs.overlays = [
+                copyparty.overlays.default
+              ]:
+            })
+
+            sops-nix.nixosModules.sops
+
             {
 
               sops = {
