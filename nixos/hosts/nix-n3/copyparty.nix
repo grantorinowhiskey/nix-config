@@ -7,6 +7,11 @@
     };
   };
 
+  networking.firewall.allowedTCPPorts = [
+    3210
+    3211
+  ];
+
   services.copyparty = {
     enable = true;
     user = "copyparty";
