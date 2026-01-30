@@ -1,6 +1,12 @@
 { pkgs, ... }:
 
 {
+  sops.secrets = {
+    "copyparty-jt-password" = {
+      owner = "copyparty";
+    };
+  };
+
   services.copyparty = {
     enable = true;
     user = "copyparty";
@@ -16,7 +22,7 @@
 
     accounts = {
       jt = {
-        passwordFile = "/run/keys/copyparty/jt_password";
+        passwordFile = "/run/secrets/copyparty-jt-password";
       };
     };
 
