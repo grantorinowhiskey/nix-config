@@ -23,6 +23,7 @@
         3210
         3211
       ];
+      xfc-src = "lan";
     };
 
     accounts = {
