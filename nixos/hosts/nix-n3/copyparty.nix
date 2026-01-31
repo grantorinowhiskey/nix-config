@@ -24,7 +24,7 @@
         3211
       ];
       rproxy = 1;
-      xff-src = "192.168.1.137";
+      xff-src = "lan";
       xff-hdr = "x-forwarded-for";
     };
 
