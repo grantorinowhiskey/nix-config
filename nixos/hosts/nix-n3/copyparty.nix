@@ -36,7 +36,7 @@
         path = "/mnt/copyparty";
         access = {
           r = "*";
-          rw = [ "jt" ];
+          A = [ "jt" ];
         };
 
       };
