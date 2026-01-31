@@ -23,7 +23,7 @@
         3210
         3211
       ];
-      xfc-src = "lan";
+      rproxy = 1;
     };
 
     accounts = {
