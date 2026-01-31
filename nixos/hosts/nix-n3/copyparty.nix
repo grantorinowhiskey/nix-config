@@ -25,6 +25,7 @@
       ];
       rproxy = 1;
       xff-src = "192.168.1.137";
+      xff-hdr = "x-forwarder-for";
     };
 
     accounts = {
