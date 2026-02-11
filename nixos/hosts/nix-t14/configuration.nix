@@ -151,7 +151,6 @@
     git
     gnupg1
     gocryptfs
-    gomuks
     gradia
     home-manager
     htop
