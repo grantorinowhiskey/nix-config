@@ -144,12 +144,15 @@
     element-desktop
     fastfetch
     ffmpeg-full
+    fractal
     fragments
     fzf
     ghostty
     git
     gnupg1
     gocryptfs
+    gomuks
+    gradia
     home-manager
     htop
     hugo
