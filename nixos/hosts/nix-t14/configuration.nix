@@ -112,23 +112,6 @@
 
   # Packages installed in system profile
   environment.systemPackages = with pkgs; [
-    # bat
-    # bat-extras.batdiff
-    # bat-extras.batgrep
-    # bat-extras.batman
-    # bat-extras.batpipe
-    # bat-extras.batwatch
-    # bat-extras.prettybat
-    # discord
-    # fish # Trying out with home-manager
-    # jellyfin-media-player
-    # localsend
-    # logseq
-    # micro
-    # onlyoffice-desktopeditors
-    # quickgui
-    # sirikali
-    # yazi
     alejandra
     amberol
     aria2
@@ -144,7 +127,6 @@
     element-desktop
     fastfetch
     ffmpeg-full
-    fractal
     fragments
     fzf
     ghostty
@@ -154,16 +136,13 @@
     gradia
     home-manager
     htop
-    hugo
     imagemagick
     impression
     intel-gpu-tools
-    inter
     lazydocker
     lazygit
     lm_sensors
     mission-center
-    morewaita-icon-theme
     mpv
     mullvad-vpn
     nh
@@ -172,7 +151,6 @@
     nixos-shell
     obsidian
     papirus-icon-theme
-    pywalfox-native
     quickemu
     resources
     sops
@@ -204,11 +182,6 @@
       ];
     })
 
-    # unstable packages
-    # nixpkgs-unstable.ghostty
-    # nixpkgs-unstable.yt-dlp
-    # nixpkgs-unstable.zed-editor
-    # nixpkgs-unstable.obsidian
   ];
 
   # fonts
@@ -278,8 +251,6 @@
     # package = nixpkgs-unstable.tailscale;
   };
 
-  # davfs2, to mount taildrive shares
-  services.davfs2.enable = true;
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
