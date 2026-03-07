@@ -21,6 +21,11 @@
   boot.zfs.extraPools = [ "tank" ];
   services.zfs.autoScrub.enable = true;
 
+  # settings for zed, zfs event daemon
+  services.zfs.zed.settings = {
+
+  }
+
   # zram
   zramSwap.enable = true;
 
@@ -158,7 +163,7 @@
 
   # List services that you want to enable:
 
-  # docker
+  # docker and virtualisation
   virtualisation = {
     docker = {
       enable = true;
@@ -169,6 +174,18 @@
     };
     libvirtd = {
       enable = true;
+    };
+  };
+
+  services.cockpit = {
+    enable = true;
+    plugins = [
+      pkgs.cockpit-zfs
+      pkgs.cockpit-machines
+      pkgs.cockpit-files
+    ];
+    settings = {
+      nix_shell.heuristic = true;
     };
   };
 
