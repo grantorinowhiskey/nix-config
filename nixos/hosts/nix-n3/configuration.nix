@@ -187,6 +187,7 @@
     settings = {
       nix_shell.heuristic = true;
     };
+    openFirewall = true;
   };
 
   # Automatic garbage collection, per recommendations from the wiki
