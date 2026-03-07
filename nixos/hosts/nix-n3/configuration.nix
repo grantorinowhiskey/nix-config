@@ -185,12 +185,16 @@
       pkgs.cockpit-files
     ];
     settings = {
-      nix_shell.heuristic = true;
+      WebService = {
+        AllowUnencrypted = true;
+        Origins = [
+          https://cockpit.ynso.duckdns.org
+        ];
+        ProtocolHeader = "X-Forwarded-Proto";
+        UrlRoot = "/"
+      };
     };
     openFirewall = true;
-    allowed-origins = [
-      "https://cockpit.ynso.duckdns.org"
-    ];
   };
 
   # Automatic garbage collection, per recommendations from the wiki
