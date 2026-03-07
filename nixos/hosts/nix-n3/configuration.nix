@@ -177,26 +177,6 @@
     };
   };
 
-  services.cockpit = {
-    enable = true;
-    plugins = [
-      pkgs.cockpit-zfs
-      pkgs.cockpit-machines
-      pkgs.cockpit-files
-    ];
-    settings = {
-      WebService = {
-        AllowUnencrypted = true;
-        Origins = [
-          https://cockpit.ynso.duckdns.org
-        ];
-        ProtocolHeader = "X-Forwarded-Proto";
-        UrlRoot = "/"
-      };
-    };
-    openFirewall = true;
-  };
-
   # Automatic garbage collection, per recommendations from the wiki
   nix.gc = {
     automatic = true;
