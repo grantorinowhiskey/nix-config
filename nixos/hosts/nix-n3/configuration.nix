@@ -188,6 +188,9 @@
       nix_shell.heuristic = true;
     };
     openFirewall = true;
+    allowed-origins = [
+      "https://cockpit.ynso.duckdns.org"
+    ];
   };
 
   # Automatic garbage collection, per recommendations from the wiki
