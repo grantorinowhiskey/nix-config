@@ -150,6 +150,7 @@
     nixos-generators
     nixos-shell
     obsidian
+    onlyoffice-desktopeditors
     papirus-icon-theme
     quickemu
     resources
@@ -250,7 +251,6 @@
     enable = true;
     # package = nixpkgs-unstable.tailscale;
   };
-
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
