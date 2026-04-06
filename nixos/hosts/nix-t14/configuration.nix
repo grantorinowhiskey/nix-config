@@ -116,6 +116,7 @@
     amberol
     aria2
     bitwarden-cli
+    cine
     bottom
     boxbuddy
     brave
