@@ -4,9 +4,9 @@
   programs.niri.enable = true;
 
   # Dank material shell
-  programs.dms-shell = {
-    enable = true;
-  };
+  # programs.dms-shell = {
+  #   enable = true;
+  # };
 
   # Other necessities
   security.polkit.enable = true; # polkit
@@ -22,11 +22,14 @@
     # fuzzel
     # swaylock
     # mako
+    noctalia-shell
     # swaybg
     # swayidle
     # waybar
     # waypaper
     xwayland-satellite
   ];
+
+  services.upower.enable = true;
 
 }
