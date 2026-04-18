@@ -23,6 +23,7 @@
     # swaylock
     # mako
     noctalia-shell
+    noctalia-qs
     # swaybg
     # swayidle
     # waybar
