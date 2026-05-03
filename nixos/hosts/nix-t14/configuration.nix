@@ -262,6 +262,9 @@
   # Mullvad
   services.mullvad-vpn.enable = true;
 
+  # locate
+  services.locate.enable = true;
+  
   # Disabled syncthing to not conflict with livesync.
   # Syncthing, https://nixos.wiki/wiki/Syncthing
   # services.syncthing = {
