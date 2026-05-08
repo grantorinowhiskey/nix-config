@@ -68,6 +68,8 @@
   # Virtualisation support
   virtualisation.libvirtd.enable = true;
 
+  virtualisation.virtualbox.host.enable = true;
+
   # Enable common container config files in /etc/containers
   virtualisation.containers.enable = true;
   virtualisation = {
@@ -95,6 +97,8 @@
       firefox
     ];
   };
+
+  users.extraGroups.vboxusers.members = [ "jt" ];
 
   # Environment variable for text editor
   # environment.variables = {
