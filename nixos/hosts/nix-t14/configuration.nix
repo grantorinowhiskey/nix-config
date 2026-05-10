@@ -159,6 +159,7 @@
     papirus-icon-theme
     quickemu
     resources
+    rustdesk-flutter
     sops
     spotify
     ssh-to-age
