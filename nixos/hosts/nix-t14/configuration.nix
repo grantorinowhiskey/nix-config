@@ -68,8 +68,6 @@
   # Virtualisation support
   virtualisation.libvirtd.enable = true;
 
-  virtualisation.virtualbox.host.enable = true;
-
   # Enable common container config files in /etc/containers
   virtualisation.containers.enable = true;
   virtualisation = {
@@ -159,7 +157,6 @@
     papirus-icon-theme
     quickemu
     resources
-    rustdesk-flutter
     sops
     spotify
     ssh-to-age
@@ -168,7 +165,6 @@
     svtplay-dl
     tealdeer
     vaults
-    vesktop
     virt-manager
     vscodium # see below for extensions
     wget
