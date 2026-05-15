@@ -27,5 +27,8 @@
   # To get rid of annoying pop-up when launching the shell
   i18n.inputMethod.enable = false;
 
+  services.keyd = {
+    enable = true;
+  };
 
 }
