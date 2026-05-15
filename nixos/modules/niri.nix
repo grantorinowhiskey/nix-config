@@ -11,6 +11,7 @@
   # programs.waybar.enable = true; # top bar - disabled because of double waybars
 
   environment.systemPackages = with pkgs; [
+    ashell
     adw-bluetooth
     brightnessctl
     fuzzel
