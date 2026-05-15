@@ -3,11 +3,6 @@
 {
   programs.niri.enable = true;
 
-  # Dank material shell
-  # programs.dms-shell = {
-  #   enable = true;
-  # };
-
   # Other necessities
   security.polkit.enable = true; # polkit
   services.gnome.gnome-keyring.enable = true; # secret service
@@ -16,21 +11,17 @@
   # programs.waybar.enable = true; # top bar - disabled because of double waybars
 
   environment.systemPackages = with pkgs; [
-    # alacritty
-    # adw-bluetooth
-    # brightnessctl
-    # fuzzel
-    # swaylock
-    # mako
-    noctalia-shell
-    noctalia-qs
-    # swaybg
-    # swayidle
-    # waybar
-    # waypaper
+    adw-bluetooth
+    brightnessctl
+    fuzzel
+    swaylock
+    mako
+    swaybg
+    swayidle
+    waybar
+    waypaper
     xwayland-satellite
   ];
 
-  services.upower.enable = true;
 
 }
