@@ -142,6 +142,7 @@
     imagemagick
     impression
     intel-gpu-tools
+    keepassxc
     lazydocker
     lazygit
     lm_sensors
