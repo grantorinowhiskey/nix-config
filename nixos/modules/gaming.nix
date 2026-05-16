@@ -9,6 +9,15 @@
   config = {
     programs.gamemode.enable = true; # for performance mode
 
+    nixpkgs.overlays = [
+      (final: prev: {
+        steam = prev.steam.override {
+          extraArgs = "-cef-disable-gpu-compositing";
+        };
+      })
+    ];
+    
+
     programs.steam = {
       enable = true; # install steam
       remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
