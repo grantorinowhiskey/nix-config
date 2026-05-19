@@ -12,11 +12,10 @@
     nixpkgs.overlays = [
       (final: prev: {
         steam = prev.steam.override {
-          extraArgs = "-cef-disable-gpu-compositing";
+          extraArgs = "-system-composer";
         };
       })
     ];
-    
 
     programs.steam = {
       enable = true; # install steam
