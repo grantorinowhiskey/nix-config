@@ -12,15 +12,16 @@
 
   environment.systemPackages = with pkgs; [
     ashell
+    awww
     adw-bluetooth
     brightnessctl
     fuzzel
     swaylock
     mako
-    swaybg
+    # swaybg
     swayidle
-    waybar
-    waypaper
+    # waybar
+    # waypaper
     xwayland-satellite
   ];
 
