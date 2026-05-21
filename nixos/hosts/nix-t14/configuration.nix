@@ -142,7 +142,6 @@
     imagemagick
     impression
     intel-gpu-tools
-    keepassxc
     lazydocker
     lazygit
     lm_sensors
@@ -157,7 +156,6 @@
     onlyoffice-desktopeditors
     papirus-icon-theme
     quickemu
-    resources
     sops
     spotify
     ssh-to-age
@@ -166,6 +164,7 @@
     svtplay-dl
     tealdeer
     vaults
+    vesktop
     virt-manager
     vscodium # see below for extensions
     wget
@@ -252,7 +251,6 @@
   # tailscale
   services.tailscale = {
     enable = true;
-    # package = nixpkgs-unstable.tailscale;
   };
 
   # Enable the OpenSSH daemon.
@@ -267,29 +265,12 @@
   # locate
   services.locate.enable = true;
   
-  # Disabled syncthing to not conflict with livesync.
-  # Syncthing, https://nixos.wiki/wiki/Syncthing
-  # services.syncthing = {
-  #   enable = true;
-  #   openDefaultPorts = true;
-  #   user = "jt";
-  #   dataDir = "/home/jt/";    # Default folder for new synced folders
-  #   configDir = "/home/jt/.config/syncthing";   # Folder for Syncthing's settings and keys
-  #   overrideDevices = true;     # overrides any devices added or deleted through the WebUI
-  #   overrideFolders = false;     # overrides any folders added or deleted through the WebUI
-  #   settings = {
-  #     devices = {
-  #       "nix-n3" = { id = "JJEWJLR-NCTFT23-TVFKJN2-7ZPO67M-2IRXVKQ-FGUST4P-AMTTZ5Y-N7J7OA4"; };
-  #       "desktop-archlinux" = { id = "U2F6OP4-NGOV7GX-MN7B7OL-JQRXOEX-RDXS2GB-BMG3YLV-6IYXHB4-J4PFCAR"; };
-  #     };
-  #   };
-  # };
 
   # Firewall
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 53317 ]; # Opened for localsend
-    allowedUDPPorts = [ 53317 ]; # Opened for localsend
+    allowedTCPPorts = [ ]; # 
+    allowedUDPPorts = [ ]; # 
   };
 
   # Workaround to get fish as the default interactive shell, and still using bash # Trying out with home-manager
@@ -306,12 +287,6 @@
 
   programs.fish.enable = true;
 
-  # programs.starship = {
-  #   enable = true;
-  #   settings = {
-  #     nix_shell.heuristic = true; # Provides a nix shell prompt in nix shell
-  #   };
-  # };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
