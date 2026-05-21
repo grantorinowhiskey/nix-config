@@ -11,16 +11,15 @@
   # programs.waybar.enable = true; # top bar - disabled because of double waybars
 
   environment.systemPackages = with pkgs; [
+    adw-bluetooth
     ashell
     awww
-    adw-bluetooth
     brightnessctl
     fuzzel
-    swaylock
     mako
-    # swaybg
+    sunsetr
     swayidle
-    # waybar
+    swaylock
     waypaper
     xwayland-satellite
   ];
