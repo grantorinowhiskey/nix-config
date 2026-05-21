@@ -218,23 +218,20 @@
     options = "--delete-older-than 30d";
   };
 
-  # services.auto-cpufreq = {
-  #   enable = true;
-  #   settings = {
-  #     charger = {
-  #       governor = "performance";
-  #       turbo = "auto";
-  #     };
-  #     battery = {
-  #       governor = "powersave";
-  #       turbo = "auto";
-  #     };
-  #   };
-  # };
-
-  services.tuned = {
+  services.auto-cpufreq = {
     enable = true;
+    settings = {
+      charger = {
+        governor = "performance";
+        turbo = "auto";
+      };
+      battery = {
+        governor = "powersave";
+        turbo = "auto";
+      };
+    };
   };
+
 
   # Enabling firmware updates
   services.fwupd.enable = true;
