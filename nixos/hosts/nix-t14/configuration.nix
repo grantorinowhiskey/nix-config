@@ -162,7 +162,7 @@
     starship
     svtplay-dl
     tealdeer
-    transmission_4-gtk
+    transmission-remote-gtk
     vaults
     vesktop
     virt-manager
