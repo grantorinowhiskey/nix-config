@@ -130,7 +130,6 @@
     element-desktop
     fastfetch
     ffmpeg-full
-    fragments
     fzf
     ghostty
     git
