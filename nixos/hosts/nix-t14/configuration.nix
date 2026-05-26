@@ -162,6 +162,7 @@
     starship
     svtplay-dl
     tealdeer
+    transmission_4
     vaults
     vesktop
     virt-manager
