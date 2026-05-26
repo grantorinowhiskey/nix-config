@@ -130,6 +130,7 @@
     element-desktop
     fastfetch
     ffmpeg-full
+    fragments
     fzf
     ghostty
     git
@@ -162,7 +163,6 @@
     starship
     svtplay-dl
     tealdeer
-    transmission-remote-gtk
     vaults
     vesktop
     virt-manager
