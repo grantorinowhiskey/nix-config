@@ -132,6 +132,7 @@
     ffmpeg-full
     fragments
     fzf
+    gdm-settings
     ghostty
     git
     gnupg1
