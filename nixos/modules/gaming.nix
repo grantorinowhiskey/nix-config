@@ -25,7 +25,7 @@
 
     environment.systemPackages = with pkgs; [
       heroic # install heroic launcher # Insecure version of electron 2025-05-21, resorting to flatpak.
-      # lutris # install lutris launcher
+      lutris # install lutris launcher
       # mumble # install voice-chat
       protonplus # GUI for installing custom Proton versions like GE_Proton
       # (retroarch.override {
