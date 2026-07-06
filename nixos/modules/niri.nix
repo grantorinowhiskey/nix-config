@@ -3,6 +3,8 @@
 {
   programs.niri.enable = true;
 
+  programs.dms-shell.enable = true;
+
   # Other necessities
   security.polkit.enable = true; # polkit
   services.gnome.gnome-keyring.enable = true; # secret service
@@ -27,19 +29,5 @@
   # To get rid of annoying pop-up when launching the shell
   i18n.inputMethod.enable = false;
 
-  services.keyd = {
-    enable = true;
-    keyboards = {
-      
-      default = {
-        ids = [ "*" ];
-        settings = {
-          main = {
-            leftmeta = "overload(meta, M-d)";
-          };
-        };
-      };
-    };
-  };
 
 }
