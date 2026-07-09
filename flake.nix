@@ -7,7 +7,6 @@
     sops-nix.url = "github:Mic92/sops-nix";
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
-    copyparty.url = "github:9001/copyparty";
   };
 
   outputs =
@@ -16,7 +15,6 @@
       # nixpkgs-unstable,
       sops-nix,
       disko,
-      copyparty,
       ...
     }@inputs:
     {
@@ -62,16 +60,7 @@
           modules = [
             ./nixos/hosts/nix-n3/configuration.nix
             ./nixos/hosts/nix-n3/hardware-configuration.nix
-            copyparty.nixosModules.default
 
-            (
-              { ... }:
-              {
-                nixpkgs.overlays = [
-                  copyparty.overlays.default
-                ];
-              }
-            )
 
             sops-nix.nixosModules.sops
 
