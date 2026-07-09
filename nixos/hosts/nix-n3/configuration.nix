@@ -9,7 +9,6 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./backups.nix
-    # ./copyparty.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -112,7 +111,6 @@
     # bat-extras.batwatch
     # bat-extras.prettybat
     # bottom
-    copyparty
     curl
     # fastfetch
     fish
