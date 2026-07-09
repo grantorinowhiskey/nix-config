@@ -3,7 +3,12 @@
 {
   programs.niri.enable = true;
 
-  programs.dms-shell.enable = true;
+  programs.dms-shell = {
+    enable = true;
+    plugins = {
+      dankscale.enable = true;
+    };
+  };
 
   # Other necessities
   security.polkit.enable = true; # polkit

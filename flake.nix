@@ -21,12 +21,10 @@
     nixosConfigurations = {
       nix-t14 = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-
-        specialArgs = {
-          inherit (inputs) dms-plugin-registry;
-        };
+        
 
         modules = [
+          inputs.dms-plugin-registry.nixosModules.default
           ./nixos/hosts/nix-t14/configuration.nix
           ./nixos/modules/gnome.nix
           ./nixos/modules/gaming.nix
