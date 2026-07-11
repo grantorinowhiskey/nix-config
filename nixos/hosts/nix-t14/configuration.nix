@@ -190,10 +190,12 @@
 
   # fonts
   fonts.packages = with pkgs; [
+    nerd-fonts.adwaita-mono
     nerd-fonts.fira-code
     nerd-fonts.fira-mono
-    nerd-fonts.roboto-mono
     nerd-fonts.hack
+    nerd-fonts.jetbrains-mono 
+    nerd-fonts.roboto-mono
   ];
 
   # ghostty as default terminal
