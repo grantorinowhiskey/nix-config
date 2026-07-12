@@ -32,7 +32,7 @@
   ];
 
   # To get rid of annoying pop-up when launching the shell
-  i18n.inputMethod.enable = false;
+  i18n.inputMethod.enable = true;
 
 
 }
