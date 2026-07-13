@@ -114,37 +114,27 @@
 
   # Packages installed in system profile
   environment.systemPackages = with pkgs; [
-    alejandra
     amberol
-    aria2
     bitwarden-cli
     cine
-    bottom
     boxbuddy
     brave
     buffer
     celluloid
-    curl
     disko
     distrobox
     element-desktop
-    fastfetch
     ffmpeg-full
     fragments
-    fzf
     gdm-settings
     ghostty
     git
     gnupg1
-    gocryptfs
     gradia
     home-manager
-    htop
     imagemagick
     impression
     intel-gpu-tools
-    lazydocker
-    lazygit
     lm_sensors
     mission-center
     mpv
@@ -163,29 +153,14 @@
     sshfs
     starship
     svtplay-dl
-    tealdeer
     vaults
     vesktop
     virt-manager
-    vscodium # see below for extensions
     wget
     wl-clipboard-rs
     yt-dlp
     yubioath-flutter
     zed-editor
-    zellij
-
-    # vscodium extensions
-    (vscode-with-extensions.override {
-      vscode = vscodium;
-      vscodeExtensions = with vscode-extensions; [
-        jnoortheen.nix-ide
-        piousdeer.adwaita-theme
-        ms-vscode-remote.remote-ssh
-        ms-azuretools.vscode-docker
-      ];
-    })
-
   ];
 
   # fonts
