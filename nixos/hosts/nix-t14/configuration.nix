@@ -153,7 +153,6 @@
     sshfs
     starship
     svtplay-dl
-    vaults
     vesktop
     virt-manager
     wget
