@@ -6,9 +6,12 @@
   programs.dms-shell = {
     enable = true;
     plugins = {
-      dankscale.enable = true;
+      dankscale.enable = true; # tailscale plugin
     };
   };
+
+  # Search functionality within dank launcher
+  programs.dsearch.enable = true;
 
   # Other necessities
   security.polkit.enable = true; # polkit
