@@ -23,6 +23,10 @@
       rsync \
         --archive \
         --partial \
+        --dry-run \
+        --itemize-changes \
+        --delete-delay \
+        --max-delete=100 \
         -e "ssh -o BatchMode=yes -o ConnectTimeout=30" \
         /home/jt/Anteckningar/ \
         jt@nix-n3:/tank/backups/Anteckningar/
