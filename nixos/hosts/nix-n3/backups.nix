@@ -1,63 +1,102 @@
 {
   config,
   pkgs,
-  lib,
   ...
 }:
 
+let
+  sourceDirectory = "/tank/backups/Anteckningar";
+  mountDirectory = "/run/anteckningar-rsync-net/crypt";
+  gocryptfsConfig = "/var/lib/anteckningar-rsync-net/gocryptfs.conf";
+  remote = "zh5530@zh5530.rsync.net:backups/Anteckningar-crypt/";
+in
 {
-  #### 📁 Lokal backup från Syncthing till ZFS
-  # systemd.services.dokument-backup = {
-  #   description = "Backup Syncthing Documents till ZFS";
-  #   serviceConfig = {
-  #     Type = "oneshot";
-  #     User = "jt";
-  #     ExecStart = "${pkgs.rsync}/bin/rsync -avz --delete /home/jt/appdata/syncthing/data/Dokument/ /tank/backups/Dokument/";
-  #   };
-  # };
+  sops.secrets.anteckningar-gocryptfs-pass = {
+    owner = "backups";
+    group = "users";
+    mode = "0400";
+  };
 
-  # systemd.timers.dokument-backup = {
-  #   description = "Timer för lokal Dokument-backup";
-  #   wantedBy = [ "timers.target" ];
-  #   timerConfig = {
-  #     OnCalendar = "04:00";
-  #     Persistent = true;
-  #   };
-  # };
+  systemd.services.anteckningar-rsync-net = {
+    description = "Krypterad backup av Anteckningar till rsync.net";
+    wants = [ "network-online.target" ];
+    after = [ "network-online.target" ];
 
-  # #### 🔐 Gocryptfs-lösenord via sops
-  # sops.secrets.Dokument-backup-gocryptfs = {
-  #   owner = "backups";
-  #   group = "users";
-  #   mode = "0400";
-  #   path = "/home/backups/.gocryptfs-pass";
-  # };
+    path = with pkgs; [
+      coreutils
+      fuse3
+      gocryptfs
+      openssh
+      rsync
+      util-linux
+    ];
 
-  # systemd.services."Dokument-backup-rsync-net" = {
-  #   path = with pkgs; [ gocryptfs rsync openssh fuse ];
-  #   script = ''
-  #     #!/usr/bin/env bash
-  #     set -e
+    script = ''
+      set -eu
 
-  #     gocryptfs -reverse -passfile /home/backups/.gocryptfs-pass \
-  #     -config /home/backups/rsync-net-config/.gocryptfs.conf \
-  #     /tank/backups/Dokument \
-  #     /home/backups/rsync-net/Dokument &&
-  #     rsync -avH --delete -e "ssh -i /home/backups/.ssh/id_ed25519" \
-  #     /home/backups/rsync-net/Dokument/ \
-  #     zh5530@zh5530.rsync.net:backups/ &&
-  #     fusermount -u /home/backups/rsync-net/Dokument
-  #   '';
-  #   serviceConfig = {
-  #     Type = "oneshot";
-  #     User = "backups";
-  #     RemainAfterExit = true;
-  #     # for fuse mounts:
-  #     DeviceAllow = "/dev/fuse rw";
-  #   };
-  # };
+      if [ ! -f ${gocryptfsConfig} ]; then
+        echo "Gocryptfs är inte initierat. Se instruktionerna i backups.nix." >&2
+        exit 1
+      fi
 
-  #### 💾 Snapshot-hantering med Sanoid
+      cleanup() {
+        if mountpoint -q ${mountDirectory}; then
+          fusermount3 -u ${mountDirectory}
+        fi
+      }
+      trap cleanup EXIT
+
+      gocryptfs \
+        -reverse \
+        -passfile ${config.sops.secrets.anteckningar-gocryptfs-pass.path} \
+        -config ${gocryptfsConfig} \
+        ${sourceDirectory} \
+        ${mountDirectory}
+
+      rsync \
+        --archive \
+        --human-readable \
+        --partial \
+        -e "ssh -o BatchMode=yes -o ConnectTimeout=30" \
+        ${mountDirectory}/ \
+        ${remote}
+
+      # Konfigurationen innehåller huvudnyckeln krypterad med lösenordet
+      # och måste finnas med för att backupen ska kunna återställas.
+      rsync \
+        --archive \
+        -e "ssh -o BatchMode=yes -o ConnectTimeout=30" \
+        ${gocryptfsConfig} \
+        ${remote}gocryptfs.conf
+    '';
+
+    serviceConfig = {
+      Type = "oneshot";
+      User = "backups";
+      Group = "users";
+      UMask = "0077";
+
+      RuntimeDirectory = "anteckningar-rsync-net/crypt";
+      RuntimeDirectoryMode = "0700";
+      StateDirectory = "anteckningar-rsync-net";
+      StateDirectoryMode = "0700";
+
+      DeviceAllow = "/dev/fuse rw";
+    };
+  };
+
+  systemd.timers.anteckningar-rsync-net = {
+    description = "Kör krypterad backup av Anteckningar varje natt";
+    wantedBy = [ "timers.target" ];
+
+    timerConfig = {
+      OnCalendar = "*-*-* 03:30:00";
+      Persistent = true;
+      Unit = "anteckningar-rsync-net.service";
+    };
+  };
+
+  # Snapshot-hantering med Sanoid
   services.sanoid = {
     enable = true;
     templates.backup = {
