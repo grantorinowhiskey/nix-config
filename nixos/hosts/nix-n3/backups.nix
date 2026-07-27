@@ -12,6 +12,9 @@ let
   remote = "zh5530@zh5530.rsync.net:backups/Anteckningar-crypt/";
 in
 {
+  # Skapar NixOS privilegierade wrappers för fusermount och fusermount3.
+  programs.fuse.enable = true;
+
   sops.secrets.anteckningar-gocryptfs-pass = {
     owner = "backups";
     group = "users";
