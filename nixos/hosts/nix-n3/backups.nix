@@ -70,13 +70,18 @@ in
         ${sourceDirectory} \
         ${mountDirectory}
 
-      rsync \
-        --archive \
-        --human-readable \
-        --partial \
-        -e "ssh -o BatchMode=yes -o ConnectTimeout=30" \
-        ${mountDirectory}/ \
-        ${remote}
+        rsync \
+          --archive \
+          --human-readable \
+          --partial \
+          --dry-run \
+          --itemize-changes \
+          --delete-delay \
+          --max-delete=1000 \
+          --filter="protect /gocryptfs.conf" \
+          -e "ssh -o BatchMode=yes -o ConnectTimeout=30" \
+          ${mountDirectory}/ \
+          ${remote}
 
       # Konfigurationen innehåller huvudnyckeln krypterad med lösenordet
       # och måste finnas med för att backupen ska kunna återställas.
