@@ -74,7 +74,6 @@ in
           --archive \
           --human-readable \
           --partial \
-          --dry-run \
           --itemize-changes \
           --delete-delay \
           --max-delete=1000 \
