@@ -7,6 +7,7 @@
 let
   sourceDirectory = "/tank/backups/Anteckningar";
   mountDirectory = "/run/anteckningar-rsync-net/crypt";
+  binDirectory = "/run/anteckningar-rsync-net/bin";
   gocryptfsConfig = "/var/lib/anteckningar-rsync-net/gocryptfs.conf";
   remote = "zh5530@zh5530.rsync.net:backups/Anteckningar-crypt/";
 in
@@ -33,9 +34,19 @@ in
     script = ''
       set -eu
 
-      # FUSE måste använda NixOS privilegierade wrapper, inte binären
-      # direkt från Nix store.
-      export PATH="/run/wrappers/bin:$PATH"
+      # Gocryptfs letar efter namnet fusermount3 och faller annars tillbaka
+      # till /bin/fusermount, en sökväg som inte finns på NixOS.
+      if [ -x /run/wrappers/bin/fusermount3 ]; then
+        fuseWrapper=/run/wrappers/bin/fusermount3
+      elif [ -x /run/wrappers/bin/fusermount ]; then
+        fuseWrapper=/run/wrappers/bin/fusermount
+      else
+        echo "Någon privilegierad fusermount-wrapper hittades inte." >&2
+        exit 1
+      fi
+
+      ln -sf "$fuseWrapper" ${binDirectory}/fusermount3
+      export PATH="${binDirectory}:/run/wrappers/bin:$PATH"
 
       if [ ! -f ${gocryptfsConfig} ]; then
         echo "Gocryptfs är inte initierat. Se instruktionerna i backups.nix." >&2
@@ -79,7 +90,10 @@ in
       Group = "users";
       UMask = "0077";
 
-      RuntimeDirectory = "anteckningar-rsync-net/crypt";
+      RuntimeDirectory = [
+        "anteckningar-rsync-net/bin"
+        "anteckningar-rsync-net/crypt"
+      ];
       RuntimeDirectoryMode = "0700";
       StateDirectory = "anteckningar-rsync-net";
       StateDirectoryMode = "0700";
