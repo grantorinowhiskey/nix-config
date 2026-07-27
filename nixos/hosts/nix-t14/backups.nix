@@ -23,7 +23,6 @@
       rsync \
         --archive \
         --partial \
-        --dry-run \
         --itemize-changes \
         --delete-delay \
         --max-delete=100 \
