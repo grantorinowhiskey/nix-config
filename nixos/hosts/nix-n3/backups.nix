@@ -24,7 +24,6 @@ in
 
     path = with pkgs; [
       coreutils
-      fuse3
       gocryptfs
       openssh
       rsync
@@ -33,6 +32,10 @@ in
 
     script = ''
       set -eu
+
+      # FUSE måste använda NixOS privilegierade wrapper, inte binären
+      # direkt från Nix store.
+      export PATH="/run/wrappers/bin:$PATH"
 
       if [ ! -f ${gocryptfsConfig} ]; then
         echo "Gocryptfs är inte initierat. Se instruktionerna i backups.nix." >&2
