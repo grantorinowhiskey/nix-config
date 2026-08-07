@@ -24,6 +24,7 @@
     };
 
     environment.systemPackages = with pkgs; [
+      dwarf-fortress-full
       heroic # install heroic launcher # Insecure version of electron 2025-05-21, resorting to flatpak.
       lutris # install lutris launcher
       # mumble # install voice-chat
