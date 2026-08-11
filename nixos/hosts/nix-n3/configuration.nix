@@ -31,7 +31,41 @@
   # networking
   networking.hostName = "nix-n3";
   networking.hostId = "7fc991b6";
-  networking.networkmanager.enable = true;
+  networking.useDHCP = false;
+  networking.networkmanager = {
+    enable = true;
+
+    # Prevent NetworkManager from creating a competing automatic profile for
+    # the physical interface. The host obtains its address through br0.
+    settings.main.no-auto-default = "enp3s0";
+
+    ensureProfiles.profiles = {
+      br0 = {
+        connection = {
+          id = "br0";
+          type = "bridge";
+          interface-name = "br0";
+          autoconnect = true;
+        };
+        bridge.stp = false;
+        ipv4.method = "auto";
+        ipv6.method = "auto";
+      };
+
+      br0-enp3s0 = {
+        connection = {
+          id = "br0-enp3s0";
+          type = "ethernet";
+          interface-name = "enp3s0";
+          master = "br0";
+          slave-type = "bridge";
+          autoconnect = true;
+        };
+        ipv4.method = "disabled";
+        ipv6.method = "disabled";
+      };
+    };
+  };
 
   # hardware accelerated video
   nixpkgs.config.packageOverrides = pkgs: {
