@@ -31,7 +31,6 @@
   environment.gnome.excludePackages = (
     with pkgs;
     [
-      gnome-photos
       gnome-tour
       gnome-console
       gnome-music
