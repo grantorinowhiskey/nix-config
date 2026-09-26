@@ -137,6 +137,7 @@
     imagemagick
     impression
     intel-gpu-tools
+    libfido2
     lm_sensors
     mission-center
     mpv
