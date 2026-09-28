@@ -127,7 +127,6 @@
     element-desktop
     ff2mpv
     ffmpeg-full
-    fragments
     gdm-settings
     ghostty
     git
