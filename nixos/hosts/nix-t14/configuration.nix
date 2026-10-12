@@ -215,6 +215,25 @@
   # davfs2 for tailscale webdav-share
   services.davfs2.enable = true;
 
+  # auto-mounting of taildrive
+  environment.etc."davfs2/davfs2.conf".text = ''
+    ask_auth 0
+    use_locks 0
+  '';
+  
+  fileSystems."/mnt/taildrive" = {
+    device = "http://100.100.100.100:8080";
+    fsType = "davfs";
+    options = [
+      "noauto"
+      "x-systemd.automount"
+      "_netdev"
+      "nofail"
+      "uid=1000"
+      "gid=100"
+    ];
+  };
+
 
 
   # Enabling firmware updates
