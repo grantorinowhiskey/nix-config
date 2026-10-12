@@ -122,6 +122,7 @@
     brave
     buffer
     celluloid
+    davfs2
     disko
     distrobox
     element-desktop
