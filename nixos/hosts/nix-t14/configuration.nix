@@ -122,7 +122,6 @@
     brave
     buffer
     celluloid
-    davfs2
     disko
     distrobox
     element-desktop
@@ -212,6 +211,10 @@
       };
     };
   };
+
+  # davfs2 for tailscale webdav-share
+  services.davfs2.enable = true;
+
 
 
   # Enabling firmware updates
