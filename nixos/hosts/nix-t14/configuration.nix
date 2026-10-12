@@ -213,14 +213,15 @@
   };
 
   # davfs2 for tailscale webdav-share
-  services.davfs2.enable = true;
+  services.davfs2 = {
+    enable = true;
+    settings.globalSection = {
+      ask_auth = false;
+      use_locks = false;
+    };
+  };
 
   # auto-mounting of taildrive
-  environment.etc."davfs2/davfs2.conf".text = ''
-    ask_auth 0
-    use_locks 0
-  '';
-  
   fileSystems."/mnt/taildrive" = {
     device = "http://100.100.100.100:8080";
     fsType = "davfs";
