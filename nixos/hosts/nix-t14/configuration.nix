@@ -138,6 +138,7 @@
     intel-gpu-tools
     keepassxc
     libfido2
+    librepods
     lm_sensors
     mission-center
     mpv
