@@ -156,7 +156,7 @@
     ssh-to-age
     sshfs
     starship
-    svtplay-dl
+    # svtplay-dl # disabled because of failed build
     vesktop
     virt-manager
     wget
