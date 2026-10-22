@@ -115,7 +115,7 @@
 
   # Packages installed in system profile
   environment.systemPackages = with pkgs; [
-    amberol
+    # amberol # temporarily disabled, failed build
     bitwarden-cli
     cine
     boxbuddy
