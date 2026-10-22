@@ -160,7 +160,7 @@
     lm_sensors
     # micro
     rsync
-    svtplay-dl
+    # svtplay-dl # disabled since build failed
     wget
     # yazi
     yt-dlp
