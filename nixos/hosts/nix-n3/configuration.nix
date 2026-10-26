@@ -248,6 +248,8 @@
     enable = true;
     # package = nixpkgs-unstable.tailscale;
   };
+  systemd.services.tailscaled.environment.TS_SSH_DISABLE_FORWARDING = "1";
+
   # # Syncthing
   # services.syncthing = {
   #   enable = true;
