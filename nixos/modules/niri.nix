@@ -3,7 +3,7 @@
 {
   programs.niri.enable = true;
 
-  programs.dms-shell = {
+  programs.dux-shell = {
     enable = true;
     plugins = {
       dankscale.enable = true; # tailscale plugin
@@ -11,7 +11,7 @@
   };
 
   # Search functionality within dank launcher
-  programs.dsearch.enable = true;
+  programs.dux-search.enable = true;
 
   # Other necessities
   security.polkit.enable = true; # polkit
