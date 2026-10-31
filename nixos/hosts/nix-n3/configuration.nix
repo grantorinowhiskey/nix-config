@@ -9,6 +9,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./backups.nix
+    ./zfs-monitoring.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -19,11 +20,6 @@
   boot.zfs.forceImportRoot = false;
   boot.zfs.extraPools = [ "tank" ];
   services.zfs.autoScrub.enable = true;
-
-  # settings for zed, zfs event daemon
-  # services.zfs.zed.settings = {
-  #
-  # };
 
   # zram
   zramSwap.enable = true;
