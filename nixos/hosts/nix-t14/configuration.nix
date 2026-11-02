@@ -148,7 +148,6 @@
     nixos-generators
     nixos-shell
     obsidian
-    onlyoffice-desktopeditors
     papirus-icon-theme
     quickemu
     sops
