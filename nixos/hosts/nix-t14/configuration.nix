@@ -119,7 +119,6 @@
     bitwarden-cli
     cine
     boxbuddy
-    brave
     buffer
     celluloid
     disko
