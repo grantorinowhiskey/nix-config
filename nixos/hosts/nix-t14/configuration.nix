@@ -242,6 +242,26 @@
   # Flatpak support
   services.flatpak.enable = true;
 
+  # Update system-wide Flatpak applications and runtimes daily.
+  systemd.services.flatpak-update = {
+    description = "Update system-wide Flatpaks";
+    wants = [ "network-online.target" ];
+    after = [ "network-online.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "${pkgs.flatpak}/bin/flatpak update --system --noninteractive --assumeyes";
+    };
+  };
+
+  systemd.timers.flatpak-update = {
+    wantedBy = [ "timers.target" ];
+    timerConfig = {
+      OnCalendar = "daily";
+      Persistent = true;
+      RandomizedDelaySec = "15min";
+    };
+  };
+
   # Disable power profiles daemon to make sure auto-cpufreq starts at boot
   services.power-profiles-daemon.enable = false;
 
