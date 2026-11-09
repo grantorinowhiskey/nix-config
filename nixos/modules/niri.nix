@@ -22,7 +22,6 @@
 
   environment.systemPackages = with pkgs; [
     adw-bluetooth
-    ashell
     awww
     brightnessctl
     fuzzel
